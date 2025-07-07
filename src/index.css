@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #117475;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f5f60;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #117475;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #14b8a6;
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Flowing Lines Animations */
+@keyframes flow-curve-1 {
+  0% {
+    d: path("M0,50 Q25,20 50,50 T100,50");
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    d: path("M0,50 Q25,80 50,50 T100,50");
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    d: path("M0,50 Q25,20 50,50 T100,50");
+    opacity: 0;
+  }
+}
+
+@keyframes flow-curve-2 {
+  0% {
+    d: path("M0,30 Q50,70 100,30");
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    d: path("M0,70 Q50,30 100,70");
+    opacity: 0;
+  }
+}
+
+@keyframes flow-wave {
+  0% {
+    transform: translateX(-100%) scaleY(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0%) scaleY(1.2);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) scaleY(1);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-spiral {
+  0% {
+    transform: rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-stream {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-particle {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translate(10px, -5px) scale(1);
+  }
+  25% {
+    transform: translate(50px, -20px) scale(1.2);
+  }
+  50% {
+    transform: translate(150px, 10px) scale(0.8);
+  }
+  75% {
+    transform: translate(250px, -10px) scale(1.1);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(350px, 5px) scale(0.9);
+  }
+  100% {
+    transform: translate(400px, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-ribbon {
+  0% {
+    transform: translateX(-100%) rotateY(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(-50%) rotateY(45deg);
+  }
+  50% {
+    transform: translateX(0%) rotateY(90deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(50%) rotateY(135deg);
+  }
+  100% {
+    transform: translateX(100%) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-energy {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1) rotate(90deg);
+    border-radius: 30%;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    border-radius: 10%;
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.2) rotate(270deg);
+    border-radius: 20%;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 0.6s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.6s ease-out 0.4s both;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fade-in 0.6s ease-out 0.6s both;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Flowing Animation Classes */
+.animate-flow-wave {
+  animation: flow-wave 8s ease-in-out infinite;
+}
+
+.animate-flow-wave-delayed {
+  animation: flow-wave 10s ease-in-out infinite 2s;
+}
+
+.animate-flow-spiral {
+  animation: flow-spiral 12s ease-in-out infinite;
+}
+
+.animate-flow-stream {
+  animation: flow-stream 6s ease-in-out infinite;
+}
+
+.animate-flow-particle {
+  animation: flow-particle 7s ease-in-out infinite;
+}
+
+.animate-flow-ribbon {
+  animation: flow-ribbon 9s ease-in-out infinite;
+}
+
+.animate-flow-energy {
+  animation: flow-energy 11s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles */
+.focus-visible {
+  outline: 2px solid #117475;
+  outline-offset: 2px;
+}
+
+/* Background gradients */
+.bg-gradient-mesh {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(17, 116, 117, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(17, 116, 117, 0.2) 0%, transparent 50%);
+}
+
+/* Section spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

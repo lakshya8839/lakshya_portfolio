@@ -17,6 +17,42 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,116,117,0.3),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(17,116,117,0.2),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(17,116,117,0.2),transparent_50%)]"></div>
+        
+        {/* River flow animations */}
+        <div className="absolute top-1/6 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400/25 to-transparent animate-river-flow"></div>
+        <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-300/20 to-transparent animate-river-flow-delayed"></div>
+        <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-500/15 to-transparent animate-river-flow-slow"></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-1/4 left-1/5 w-2 h-2 bg-yellow-400/40 rounded-full animate-float-up"></div>
+        <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-yellow-300/35 rounded-full animate-float-up" style={{ animationDelay: '5s' }}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-yellow-500/30 rounded-full animate-float-up" style={{ animationDelay: '10s' }}></div>
+        
+        {/* Small box animation (energy flows) */}
+        <div className="absolute top-1/4 left-1/5">
+          <div className="w-6 h-6 bg-gradient-to-br from-yellow-400/25 to-yellow-600/15 animate-flow-energy"></div>
+        </div>
+        <div className="absolute bottom-1/4 right-1/4">
+          <div className="w-5 h-5 bg-gradient-to-br from-yellow-300/20 to-yellow-500/10 animate-flow-energy"></div>
+        </div>
+      </div>
+
+      {/* Flowing Lines SVG Background (many smooth, parallel, animated lines with hover effect) */}
+      <div className="flowing-lines-bg group" style={{ transform: 'rotate(-15deg)', bottom: 0, top: 'unset', height: '40%', zIndex: 1, pointerEvents: 'none' }}>
+        <svg viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ height: '100%', width: '100%' }}>
+          {Array.from({ length: 12 }).map((_, i) => (
+            <path
+              key={i}
+              className={`flowing-line transition-all duration-300 group-hover:opacity-80 group-hover:blur-sm`}
+              d={`M0 ${220 + i * 15} Q 360 ${200 + i * 10} 720 ${220 + i * 15} T 1440 ${220 + i * 15}`}
+              style={{
+                opacity: 0.12 + 0.04 * (i % 3),
+                filter: `blur(${0.5 + (i % 3) * 0.7}px)`,
+                animationDelay: `${i * 0.5}s`,
+              }}
+            />
+          ))}
+        </svg>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -46,14 +82,32 @@ const Hero: React.FC = () => {
           {/* Right side - Profile Photo */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 p-1 animate-pulse-slow">
-                <img
-                  src={profileImg}
-                  alt="Profile"
-                  className="w-full h-full object-cover rounded-full"
-                />
+              {/* Revolving circles around profile picture */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-96 h-96">
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-teal-400/40 rounded-full animate-circle-revolve"></div>
+                  <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-teal-300/35 rounded-full animate-circle-revolve"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-teal-500/30 rounded-full animate-circle-revolve"></div>
+                  <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-teal-600/25 rounded-full animate-circle-revolve"></div>
+                  
+                  {/* Inner revolving circles (reverse direction) */}
+                  <div className="absolute top-1/4 right-1/4 w-4 h-4 bg-teal-400/50 rounded-full animate-circle-revolve-reverse"></div>
+                  <div className="absolute bottom-1/4 left-1/4 w-4 h-4 bg-teal-300/45 rounded-full animate-circle-revolve-reverse"></div>
+                  <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-teal-500/40 rounded-full animate-circle-revolve-reverse"></div>
+                  <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-teal-600/35 rounded-full animate-circle-revolve-reverse"></div>
+                </div>
               </div>
-              <div className="absolute -inset-4 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full blur-lg opacity-30 animate-pulse-slow"></div>
+              
+              {/* Profile picture (real color, no overlay, clean white border) */}
+              <div className="relative z-10 flex items-center justify-center">
+                <div className="w-80 h-80 rounded-full bg-white p-1 shadow-xl">
+                  <img
+                    src={profileImg}
+                    alt="Profile"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

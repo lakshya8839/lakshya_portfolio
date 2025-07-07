@@ -8,10 +8,12 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import FloatingSidebar from './components/FloatingSidebar';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Load theme from localStorage
@@ -19,6 +21,13 @@ function App() {
     if (savedTheme) {
       setIsDarkMode(savedTheme === 'dark');
     }
+    
+    // Hide loading screen after 3 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -48,6 +57,10 @@ function App() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">

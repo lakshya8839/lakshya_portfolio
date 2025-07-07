@@ -33,25 +33,26 @@ const Certifications: React.FC = () => {
     <section id="certifications" className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
       {/* Flowing Lines Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Flowing ribbons */}
-        <div className="absolute top-1/6 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-400/18 to-transparent animate-flow-ribbon"></div>
-        <div className="absolute bottom-1/5 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-300/14 to-transparent animate-flow-ribbon" style={{ animationDelay: '5s' }}></div>
+        {/* River flow animations */}
+        <div className="absolute top-1/6 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-400/18 to-transparent animate-river-flow"></div>
+        <div className="absolute bottom-1/5 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-300/14 to-transparent animate-river-flow-delayed"></div>
+        <div className="absolute top-4/5 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-500/10 to-transparent animate-river-flow-slow"></div>
         
-        {/* Flowing particles */}
-        <div className="absolute top-1/5 left-0" style={{ animationDelay: '1.5s' }}>
-          <div className="w-2 h-2 bg-teal-400/38 rounded-full animate-flow-particle"></div>
-        </div>
-        <div className="absolute top-4/5 left-0" style={{ animationDelay: '6.5s' }}>
-          <div className="w-3 h-3 bg-teal-300/32 rounded-full animate-flow-particle"></div>
-        </div>
-        
-        {/* Streaming lines */}
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-teal-400/16 to-transparent animate-flow-stream"></div>
-        <div className="absolute top-0 right-1/6 w-px h-full bg-gradient-to-b from-transparent via-teal-300/12 to-transparent animate-flow-stream" style={{ animationDelay: '3.5s' }}></div>
+        {/* Floating particles */}
+        <div className="absolute top-1/5 left-1/6 w-2 h-2 bg-teal-400/38 rounded-full animate-float-up"></div>
+        <div className="absolute top-4/5 right-1/4 w-3 h-3 bg-teal-300/32 rounded-full animate-float-up" style={{ animationDelay: '5.5s' }}></div>
+        <div className="absolute bottom-1/5 left-1/3 w-2 h-2 bg-teal-500/28 rounded-full animate-float-up" style={{ animationDelay: '11s' }}></div>
+        <div className="absolute top-1/2 right-1/6 w-2 h-2 bg-teal-600/22 rounded-full animate-float-up" style={{ animationDelay: '16.5s' }}></div>
         
         {/* Energy flows */}
-        <div className="absolute top-1/4 left-1/3" style={{ animationDelay: '2.5s' }}>
+        <div className="absolute top-1/4 left-1/3">
           <div className="w-5 h-5 bg-gradient-to-br from-teal-400/22 to-teal-600/12 animate-flow-energy"></div>
+        </div>
+        <div className="absolute bottom-1/3 right-1/4">
+          <div className="w-6 h-6 bg-gradient-to-br from-teal-300/18 to-teal-500/8 animate-flow-energy" style={{ animationDelay: '2.5s' }}></div>
+        </div>
+        <div className="absolute top-3/4 left-1/5">
+          <div className="w-4 h-4 bg-gradient-to-br from-teal-500/16 to-teal-700/10 animate-flow-energy" style={{ animationDelay: '6.5s' }}></div>
         </div>
       </div>
 

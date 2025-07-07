@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Github, Linkedin, Twitter, Download, MapPin, Phone } from 'lucide-react';
+import emailjs from 'emailjs-com';
+
+// IMPORTANT: Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_USER_ID' with your actual EmailJS values.
+// To send to chalanalakshya5@gmail.com, set the recipient in your EmailJS template settings.
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,12 +12,23 @@ const Contact: React.FC = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here (EmailJS integration would go here)
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      await emailjs.send(
+        'service_7qrvwwz',
+        'template_c56uq5k',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        'n7xso1J9Viazz_HGh'
+      );
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      // Optionally handle error
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -48,28 +63,26 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
       {/* Flowing Lines Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Flowing wave lines */}
-        <div className="absolute top-1/3 left-0 w-full h-1 bg-gradient-to-r from-transparent via-teal-400/25 to-transparent rounded-full animate-flow-wave"></div>
-        <div className="absolute bottom-1/4 left-0 w-full h-1 bg-gradient-to-r from-transparent via-teal-300/20 to-transparent rounded-full animate-flow-wave-delayed"></div>
+        {/* River flow animations */}
+        <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-400/25 to-transparent animate-river-flow"></div>
+        <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-300/20 to-transparent animate-river-flow-delayed"></div>
+        <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-500/15 to-transparent animate-river-flow-slow"></div>
         
-        {/* Flowing particles */}
-        <div className="absolute top-1/5 left-0" style={{ animationDelay: '2.5s' }}>
-          <div className="w-2 h-2 bg-teal-400/42 rounded-full animate-flow-particle"></div>
-        </div>
-        <div className="absolute top-4/5 left-0" style={{ animationDelay: '7s' }}>
-          <div className="w-3 h-3 bg-teal-300/36 rounded-full animate-flow-particle"></div>
-        </div>
-        
-        {/* Streaming lines */}
-        <div className="absolute top-0 right-1/6 w-px h-full bg-gradient-to-b from-transparent via-teal-400/22 to-transparent animate-flow-stream"></div>
-        <div className="absolute top-0 left-1/5 w-px h-full bg-gradient-to-b from-transparent via-teal-300/16 to-transparent animate-flow-stream" style={{ animationDelay: '4.5s' }}></div>
+        {/* Floating particles */}
+        <div className="absolute top-1/5 left-1/6 w-2 h-2 bg-teal-400/42 rounded-full animate-float-up"></div>
+        <div className="absolute top-4/5 right-1/4 w-3 h-3 bg-teal-300/36 rounded-full animate-float-up" style={{ animationDelay: '7s' }}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-teal-500/32 rounded-full animate-float-up" style={{ animationDelay: '14s' }}></div>
+        <div className="absolute top-1/2 right-1/6 w-2 h-2 bg-teal-600/28 rounded-full animate-float-up" style={{ animationDelay: '21s' }}></div>
         
         {/* Energy flows */}
-        <div className="absolute top-1/6 right-1/4" style={{ animationDelay: '1.5s' }}>
+        <div className="absolute top-1/6 right-1/4">
           <div className="w-6 h-6 bg-gradient-to-br from-teal-400/28 to-teal-600/18 animate-flow-energy"></div>
         </div>
-        <div className="absolute bottom-1/3 left-1/3" style={{ animationDelay: '6s' }}>
-          <div className="w-5 h-5 bg-gradient-to-br from-teal-300/24 to-teal-500/14 animate-flow-energy"></div>
+        <div className="absolute bottom-1/3 left-1/3">
+          <div className="w-5 h-5 bg-gradient-to-br from-teal-300/24 to-teal-500/14 animate-flow-energy" style={{ animationDelay: '6s' }}></div>
+        </div>
+        <div className="absolute top-3/4 right-1/5">
+          <div className="w-4 h-4 bg-gradient-to-br from-teal-500/20 to-teal-700/12 animate-flow-energy" style={{ animationDelay: '12s' }}></div>
         </div>
       </div>
 

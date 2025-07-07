@@ -2,7 +2,7 @@ import React from 'react';
 
 const LoadingScreen: React.FC = () => {
   return (
-    <div className="fixed inset-0 loading-gradient-bg flex items-center justify-center z-50">
+    <div className="fixed inset-0 loading-gradient-bg flex items-center justify-center z-50 p-4">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating particles */}
@@ -15,12 +15,12 @@ const LoadingScreen: React.FC = () => {
         <div className="absolute top-3/4 left-0 w-full h-px bg-gray-600/6 animate-river-flow-slow"></div>
       </div>
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center gap-2 animate-loading-fade-in">
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-white text-5xl md:text-7xl font-extrabold uppercase tracking-widest leading-tight text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center gap-2 animate-loading-fade-in w-full max-w-xl">
+        <div className="flex flex-col items-center justify-center w-full">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold uppercase tracking-widest leading-tight text-center break-words w-full">
             Lakshya Chalana's
           </h1>
-          <h2 className="text-white text-4xl md:text-6xl font-extrabold uppercase tracking-widest leading-tight text-center">
+          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold uppercase tracking-widest leading-tight text-center break-words w-full">
             Portfolio
           </h2>
         </div>

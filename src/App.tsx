@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Moon, Sun, Download, ExternalLink, Github, Linkedin, Twitter, Mail, MapPin, Calendar, Award, Code2, Database, Wrench, Menu, X, ChevronDown, ArrowUp } from 'lucide-react';
 import Hero from './components/Hero';
 import About from './components/About';
+import LinuxWorldWork from './components/LinuxWorldWork';
 import LinkedInFeatured from './components/LinkedInFeatured';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -71,6 +72,7 @@ function App() {
       <main className="relative">
         <Hero />
         <About />
+        <LinuxWorldWork />
         <LinkedInFeatured />
         <Projects />
         <Skills />

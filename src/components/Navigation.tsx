@@ -46,11 +46,16 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out">
+      {/* Improved backdrop: more opaque, visible border, subtle shadow */}
+      <div className="absolute inset-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-md"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-teal-600">LC</span>
+            <span className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-transparent transition-all duration-300 hover:scale-105">
+              LC
+            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -60,10 +65,10 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out ${
                     activeSection === item.id
-                      ? 'bg-teal-600 text-white'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-teal-100 dark:hover:bg-teal-900/50 hover:text-teal-600'
+                      ? 'bg-teal-500/20 dark:bg-teal-400/20 text-teal-700 dark:text-teal-300 shadow-lg backdrop-blur-sm border border-teal-500/30 dark:border-teal-400/30'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-800/20 hover:text-teal-600 dark:hover:text-teal-400 hover:shadow-md backdrop-blur-sm border border-transparent hover:border-teal-500/20 dark:hover:border-teal-400/20'
                   }`}
                 >
                   {item.label}
@@ -75,7 +80,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-800/20 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 ease-in-out backdrop-blur-sm border border-transparent hover:border-teal-500/20 dark:hover:border-teal-400/20 hover:shadow-md"
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
@@ -84,7 +89,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-800/20 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 ease-in-out backdrop-blur-sm border border-transparent hover:border-teal-500/20 dark:hover:border-teal-400/20 hover:shadow-md"
               >
                 {isOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
@@ -95,16 +100,16 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div className="md:hidden relative">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-white/20 dark:border-gray-700/20 shadow-lg">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ease-in-out ${
                   activeSection === item.id
-                    ? 'bg-teal-600 text-white'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-teal-100 dark:hover:bg-teal-900/50 hover:text-teal-600'
+                    ? 'bg-teal-500/20 dark:bg-teal-400/20 text-teal-700 dark:text-teal-300 shadow-md backdrop-blur-sm border border-teal-500/30 dark:border-teal-400/30'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-800/20 hover:text-teal-600 dark:hover:text-teal-400 hover:shadow-md backdrop-blur-sm border border-transparent hover:border-teal-500/20 dark:hover:border-teal-400/20'
                 }`}
               >
                 {item.label}

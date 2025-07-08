@@ -42,20 +42,20 @@ const Contact: React.FC = () => {
     {
       name: 'GitHub',
       url: 'https://github.com/lakshya8839',
-      icon: <Github className="w-5 h-5" />,
-      color: 'hover:bg-gray-700',
+      icon: <Github className="w-5 h-5 text-gray-800 dark:text-gray-200 group-hover:text-white transition-colors duration-300" />, // dark, white on hover
+      color: 'hover:bg-teal-600 dark:hover:bg-teal-700',
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/lakshya-chalana-886306285',
-      icon: <Linkedin className="w-5 h-5" />,
-      color: 'hover:bg-blue-600',
+      icon: <Linkedin className="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors duration-300" />, // white on hover
+      color: 'hover:bg-teal-600 dark:hover:bg-teal-700',
     },
     {
       name: 'Twitter',
       url: 'https://x.com/Chlakshya_8839?t=nJGw8MQfVUjereLf1oYXCg&s=09',
-      icon: <Twitter className="w-5 h-5" />,
-      color: 'hover:bg-blue-400',
+      icon: <Twitter className="w-5 h-5 text-sky-500 dark:text-sky-400 group-hover:text-white transition-colors duration-300" />, // white on hover
+      color: 'hover:bg-teal-600 dark:hover:bg-teal-700',
     },
   ];
 
@@ -118,14 +118,14 @@ const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   className={`flex items-center p-4 bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group ${link.color} border border-gray-200 dark:border-gray-700`}
                 >
-                  <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full mr-4 group-hover:bg-white transition-colors duration-300">
+                  <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full mr-4 group-hover:bg-teal-500/80 dark:group-hover:bg-teal-800/80 transition-colors duration-300">
                     {link.icon}
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-white">
                       {link.name}
                     </h4>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-200">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-100">
                       Connect with me on {link.name}
                     </p>
                   </div>

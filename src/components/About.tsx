@@ -35,11 +35,21 @@ const About: React.FC = () => {
         <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-300/20 to-transparent animate-river-flow-delayed"></div>
         <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-500/15 to-transparent animate-river-flow-slow"></div>
         
-        {/* Floating particles */}
+        {/* Floating particles (existing) */}
         <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-teal-400/40 rounded-full animate-float-up"></div>
         <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-teal-300/35 rounded-full animate-float-up" style={{ animationDelay: '4s' }}></div>
         <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-teal-500/30 rounded-full animate-float-up" style={{ animationDelay: '8s' }}></div>
         <div className="absolute top-1/2 right-1/6 w-2 h-2 bg-teal-600/25 rounded-full animate-float-up" style={{ animationDelay: '12s' }}></div>
+        {/* Extra floating particles for sides */}
+        <div className="absolute top-1/5 left-0 w-2 h-2 bg-white/30 rounded-full animate-float-up" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/6 left-2 w-3 h-3 bg-teal-200/30 rounded-full animate-float-up" style={{ animationDelay: '6s' }}></div>
+        <div className="absolute top-1/4 right-0 w-2 h-2 bg-white/25 rounded-full animate-float-up" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-1/5 right-2 w-3 h-3 bg-teal-300/20 rounded-full animate-float-up" style={{ animationDelay: '7s' }}></div>
+        {/* Blurred gradient blobs for depth */}
+        <div className="absolute left-0 top-1/3 w-32 h-32 bg-teal-400/20 rounded-full blur-2xl animate-blob-drift"></div>
+        <div className="absolute left-8 bottom-1/4 w-24 h-24 bg-teal-200/20 rounded-full blur-2xl animate-blob-drift2"></div>
+        <div className="absolute right-0 top-1/4 w-32 h-32 bg-teal-300/20 rounded-full blur-2xl animate-blob-drift" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute right-8 bottom-1/3 w-24 h-24 bg-teal-100/20 rounded-full blur-2xl animate-blob-drift2" style={{ animationDelay: '7s' }}></div>
         
         {/* Energy flows */}
         <div className="absolute top-1/5 right-1/6">

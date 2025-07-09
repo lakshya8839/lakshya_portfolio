@@ -115,28 +115,20 @@ body {
   }
 }
 
-/* River Flow Animations */
-@keyframes river-flow {
+/* River Flow Animations - Seamless, continuous, and visually appealing */
+@keyframes river-flow-seamless {
   0% {
-    transform: translateX(-100%) translateY(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(100vw) translateY(20px);
-    opacity: 0;
+    transform: translateX(-100vw);
   }
 }
 
 @keyframes river-flow-delayed {
   0% {
-    transform: translateX(-100%) translateY(10px);
-    opacity: 0;
+    transform: translateX(-100vw) translateY(10px);
+    opacity: 0.6;
   }
   15% {
     opacity: 1;
@@ -146,14 +138,14 @@ body {
   }
   100% {
     transform: translateX(100vw) translateY(-10px);
-    opacity: 0;
+    opacity: 0.6;
   }
 }
 
 @keyframes river-flow-slow {
   0% {
-    transform: translateX(-100%) translateY(5px);
-    opacity: 0;
+    transform: translateX(-100vw) translateY(5px);
+    opacity: 0.5;
   }
   20% {
     opacity: 1;
@@ -163,7 +155,7 @@ body {
   }
   100% {
     transform: translateX(100vw) translateY(15px);
-    opacity: 0;
+    opacity: 0.5;
   }
 }
 
@@ -397,14 +389,117 @@ body {
   animation: flow-ribbon 18s linear infinite;
 }
 
+.animate-divider-bar {
+  animation: divider-bar-move 5s linear infinite;
+}
+@keyframes divider-bar-move {
+  0% { left: 100%; }
+  100% { left: -180px; }
+}
+
+.animate-divider-bar1 {
+  animation: divider-bar1-move 7s linear infinite;
+  animation-delay: 0s;
+}
+@keyframes divider-bar1-move {
+  0% { left: 100%; }
+  100% { left: -90px; }
+}
+
+.animate-divider-bar2 {
+  animation: divider-bar2-move 8.5s linear infinite;
+  animation-delay: 1.2s;
+}
+@keyframes divider-bar2-move {
+  0% { left: 100%; }
+  100% { left: -90px; }
+}
+
+.animate-divider-bar3 {
+  animation: divider-bar3-move 10s linear infinite;
+  animation-delay: 2.4s;
+}
+@keyframes divider-bar3-move {
+  0% { left: 100%; }
+  100% { left: -90px; }
+}
+
+.animate-divider-bar4 {
+  animation: divider-bar4-move 10s linear infinite;
+  animation-delay: 3.6s;
+}
+@keyframes divider-bar4-move {
+  0% { left: 100%; }
+  100% { left: -120px; }
+}
+
+.animate-divider-bar5 {
+  animation: divider-bar5-move 11s linear infinite;
+  animation-delay: 4.8s;
+}
+@keyframes divider-bar5-move {
+  0% { left: 100%; }
+  100% { left: -120px; }
+}
+
+/* River Flow Animations - revert to original for horizontal lines */
+@keyframes river-flow {
+  0% {
+    transform: translateX(-100%) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes river-flow-delayed {
+  0% {
+    transform: translateX(-100%) translateY(10px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-10px);
+    opacity: 0;
+  }
+}
+
+@keyframes river-flow-slow {
+  0% {
+    transform: translateX(-100%) translateY(5px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(15px);
+    opacity: 0;
+  }
+}
+
 .animate-river-flow {
   animation: river-flow 25s linear infinite;
 }
-
 .animate-river-flow-delayed {
   animation: river-flow-delayed 30s linear infinite;
 }
-
 .animate-river-flow-slow {
   animation: river-flow-slow 35s linear infinite;
 }
@@ -599,4 +694,40 @@ section {
   opacity: 0.15;
   filter: blur(2px);
   animation: flowing-lines-move 16s linear infinite;
+}
+
+@keyframes river-path-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes wave-divider-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.animate-blob-drift {
+  animation: blob-drift 18s ease-in-out infinite alternate;
+}
+@keyframes blob-drift {
+  0% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(40px) scale(1.08); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+.animate-blob-drift2 {
+  animation: blob-drift2 22s ease-in-out infinite alternate;
+}
+@keyframes blob-drift2 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
 }

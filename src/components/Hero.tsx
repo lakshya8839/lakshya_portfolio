@@ -37,25 +37,58 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Flowing Lines SVG Background (many smooth, parallel, animated lines with hover effect) */}
-      <div className="flowing-lines-bg group" style={{ transform: 'rotate(-15deg)', bottom: 0, top: 'unset', height: '40%', zIndex: 1, pointerEvents: 'none' }}>
-        <svg viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ height: '100%', width: '100%' }}>
-          {Array.from({ length: 12 }).map((_, i) => (
-            <path
-              key={i}
-              className={`flowing-line transition-all duration-300 group-hover:opacity-80 group-hover:blur-sm`}
-              d={`M0 ${220 + i * 15} Q 360 ${200 + i * 10} 720 ${220 + i * 15} T 1440 ${220 + i * 15}`}
-              style={{
-                opacity: 0.12 + 0.04 * (i % 3),
-                filter: `blur(${0.5 + (i % 3) * 0.7}px)`,
-                animationDelay: `${i * 0.5}s`,
-              }}
-            />
-          ))}
+      {/* Thin, modern animated divider at section boundary */}
+      <div className="absolute left-0 right-0 bottom-0 w-full flex items-end justify-center pointer-events-none" style={{zIndex: 3, height: '8px'}}>
+        <div className="w-full h-px bg-white/30 relative overflow-hidden">
+          <div className="absolute top-0 h-0.5 bg-gradient-to-r from-teal-400 via-white to-teal-400 rounded-full animate-divider-bar1" style={{width: '90px'}}></div>
+          <div className="absolute top-1 h-0.5 bg-gradient-to-r from-teal-300 via-white to-teal-500 rounded-full animate-divider-bar2" style={{width: '90px'}}></div>
+          <div className="absolute top-2 h-0.5 bg-gradient-to-r from-white via-teal-400 to-white rounded-full animate-divider-bar3" style={{width: '90px'}}></div>
+        </div>
+      </div>
+
+      {/* Professional, dense, faded river lines at the bottom */}
+      <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden pointer-events-none h-40 sm:h-64 md:h-80 lg:h-96" style={{zIndex: 1}}>
+        <svg viewBox="0 0 2880 320" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '200%', height: '100%' }}>
+          <defs>
+            <linearGradient id="river-fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#fff" stopOpacity="0" />
+              <stop offset="10%" stopColor="#fff" stopOpacity="0.15" />
+              <stop offset="25%" stopColor="#fff" stopOpacity="0.5" />
+              <stop offset="80%" stopColor="#fff" stopOpacity="1" />
+              <stop offset="100%" stopColor="#fff" stopOpacity="1" />
+            </linearGradient>
+            <mask id="river-mask">
+              <rect x="0" y="0" width="2880" height="320" fill="url(#river-fade)" />
+            </mask>
+          </defs>
+          <g mask="url(#river-mask)" style={{ animation: 'river-path-move 16s linear infinite', willChange: 'transform' }}>
+            {Array.from({ length: 28 }).map((_, i) => (
+              <path
+                key={i}
+                d={`M-200 ${300 - i * 10} C 720 ${260 - i * 18}, 2160 ${340 - i * 12}, 3080 ${300 - i * 10}`}
+                stroke="#fff"
+                strokeWidth={1}
+                opacity={0.13}
+                fill="none"
+              />
+            ))}
+          </g>
+          <g mask="url(#river-mask)" style={{ animation: 'river-path-move 16s linear infinite', animationDelay: '8s', willChange: 'transform' }}>
+            {Array.from({ length: 28 }).map((_, i) => (
+              <path
+                key={`dup-${i}`}
+                d={`M-200 ${300 - i * 10} C 720 ${260 - i * 18}, 2160 ${340 - i * 12}, 3080 ${300 - i * 10}`}
+                stroke="#fff"
+                strokeWidth={1}
+                opacity={0.13}
+                fill="none"
+              />
+            ))}
+          </g>
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text Content */}
           <div className="text-center lg:text-left">
@@ -100,11 +133,13 @@ const Hero: React.FC = () => {
               
               {/* Profile picture (real color, no overlay, clean white border) */}
               <div className="relative z-10 flex items-center justify-center">
-                <div className="w-80 h-80 rounded-full bg-white p-1 shadow-xl">
+                <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-white p-1 shadow-xl">
                   <img
                     src={profileImg}
                     alt="Profile"
                     className="w-full h-full object-cover rounded-full"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -114,8 +149,8 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-        <ChevronDown size={32} />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white cursor-pointer" onClick={() => scrollToSection('about')}>
+        <ChevronDown size={24} />
       </div>
     </section>
   );

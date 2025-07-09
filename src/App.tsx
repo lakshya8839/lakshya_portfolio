@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import FloatingSidebar from './components/FloatingSidebar';
 import LoadingScreen from './components/LoadingScreen';
+import Footer from './components/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -89,6 +90,7 @@ function App() {
           <ArrowUp size={20} />
         </button>
       )}
+      <Footer />
     </div>
   );
 }

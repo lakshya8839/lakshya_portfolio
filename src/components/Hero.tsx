@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Professional, dense, faded river lines at the bottom */}
-      <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden pointer-events-none h-40 sm:h-64 md:h-80 lg:h-96" style={{zIndex: 1}}>
+      <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden pointer-events-none h-24 sm:h-40 md:h-64 lg:h-80" style={{zIndex: 1}}>
         <svg viewBox="0 0 2880 320" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '200%', height: '100%' }}>
           <defs>
             <linearGradient id="river-fade" x1="0" y1="0" x2="0" y2="1">
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
               
               {/* Profile picture (real color, no overlay, clean white border) */}
               <div className="relative z-10 flex items-center justify-center">
-                <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-white p-1 shadow-xl">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-white p-1 shadow-xl">
                   <img
                     src={profileImg}
                     alt="Profile"

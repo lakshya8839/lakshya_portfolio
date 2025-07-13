@@ -6,16 +6,25 @@ import apacheDocker from '../assets/2.jpg';
 const LinkedInFeatured: React.FC = () => {
   return (
     <section id="linkedin-featured" className="py-16 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-4 text-center text-teal-700 dark:text-teal-300">Featured on LinkedIn</h2>
-        <div className="space-y-12">
-          {/* Pinterest x Kubernetes Case Study Card */}
-          <div>
-            <p className="text-center text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Pinterest x Kubernetes: How Pinterest scaled with Docker & K8s. Real-world case study insights on microservices, infra, and DevOps transformation. Read the full breakdown on LinkedIn!
-            </p>
-            <div className="flex flex-col items-center">
-              <div className="relative w-full max-w-xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-teal-700 dark:text-teal-300">
+          Featured on LinkedIn
+        </h2>
+        
+        <div className="space-y-16 sm:space-y-20">
+          {/* First Row: Pinterest x Kubernetes (Left) and Apache Docker (Right) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Pinterest x Kubernetes - Left */}
+            <div className="lg:pr-8">
+              <div className="text-center lg:text-left mb-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  Pinterest x Kubernetes Case Study
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                  How Pinterest scaled with Docker & K8s. Real-world case study insights on microservices, infra, and DevOps transformation.
+                </p>
+              </div>
+              <div className="relative">
                 <img
                   src={pinterestKubernetes}
                   alt="Pinterest Kubernetes Case Study"
@@ -36,15 +45,18 @@ const LinkedInFeatured: React.FC = () => {
                 </a>
               </div>
             </div>
-          </div>
 
-          {/* Apache Server in Docker Card */}
-          <div>
-            <p className="text-center text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Apache Server Setup Inside Docker: Hands-on experience running and configuring Apache inside a Docker container, learning about systemctl, ports, and real-world DevOps deployment. <a href="https://www.linkedin.com/posts/lakshya-chalana-886306285_apacheserver-docker-devops-activity-7348255132142211072-M9sA?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE&utm_campaign=copy_link" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline">Read more on LinkedIn</a>
-            </p>
-            <div className="flex flex-col items-center">
-              <div className="relative w-full max-w-xl">
+            {/* Apache Server in Docker - Right */}
+            <div className="lg:pl-8 lg:pt-12">
+              <div className="text-center lg:text-left mb-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  Apache Server in Docker
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Hands-on experience running and configuring Apache inside a Docker container, learning about systemctl, ports, and real-world DevOps deployment.
+                </p>
+              </div>
+              <div className="relative">
                 <img
                   src={apacheDocker}
                   alt="Apache Server in Docker"
@@ -67,13 +79,19 @@ const LinkedInFeatured: React.FC = () => {
             </div>
           </div>
 
-          {/* Jenkins DevOps Project Card */}
-          <div>
-            <p className="text-center text-lg text-gray-700 dark:text-gray-300 mb-8">
-              My first DevOps project: End-to-end CI/CD pipeline with Jenkins, Docker, and GitHub! Check out the full story and details on LinkedIn.
-            </p>
-            <div className="flex flex-col items-center">
-              <div className="relative w-full max-w-xl">
+          {/* Second Row: Jenkins DevOps Project (Left) with balanced spacing */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Jenkins DevOps Project - Left */}
+            <div className="lg:pr-8">
+              <div className="text-center lg:text-left mb-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  My First DevOps Project
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                  End-to-end CI/CD pipeline with Jenkins, Docker, and GitHub! Complete automation from code to deployment.
+                </p>
+              </div>
+              <div className="relative">
                 <img
                   src={jenkinsScreenshot}
                   alt="Jenkins Console Output - DevOps Project"
@@ -92,6 +110,30 @@ const LinkedInFeatured: React.FC = () => {
                 >
                   View on LinkedIn
                 </a>
+              </div>
+            </div>
+
+            {/* Empty space for balance - Right */}
+            <div className="lg:pl-8 lg:pt-12">
+              <div className="text-center lg:text-left mb-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 opacity-0">
+                  Placeholder
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed opacity-0">
+                  Future featured content will appear here.
+                </p>
+              </div>
+              <div className="relative">
+                <div className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-800 w-full h-64 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+                  <div className="text-center text-gray-400 dark:text-gray-600">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                    </div>
+                    <p className="text-sm font-medium">More Content Coming Soon</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

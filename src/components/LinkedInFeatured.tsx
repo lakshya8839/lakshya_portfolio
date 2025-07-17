@@ -2,6 +2,8 @@ import React from 'react';
 import jenkinsScreenshot from '../assets/jenkins_screenshot.png';
 import pinterestKubernetes from '../assets/pinterest_kubernetes.png';
 import apacheDocker from '../assets/2.jpg';
+import aws200Img from '../assets/11.png';
+import aws86Img from '../assets/12.png';
 
 const LinkedInFeatured: React.FC = () => {
   return (
@@ -113,6 +115,72 @@ const LinkedInFeatured: React.FC = () => {
               </div>
             </div>
 
+            {/* AWS 86 Services - Middle */}
+            <div className="lg:pl-8 lg:pt-12">
+              <div className="text-center lg:text-left mb-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  86 AWS Services: Team Learning Journey
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Collaborative, hands-on learning of 86 core AWS services at LinuxWorld Informatics. Real use cases, teamwork, and deep cloud exposure. <a href="https://www.linkedin.com/posts/lakshya-chalana-886306285_aws-86-services-we-learned-activity-7350550833064775680-aLPr?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE" target="_blank" rel="noopener noreferrer" className="underline text-teal-600 dark:text-teal-400">Read more</a>
+                </p>
+              </div>
+              <div className="relative">
+                <img
+                  src={aws86Img}
+                  alt="AWS 86 Services Team Learning"
+                  className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-800 w-full"
+                  style={{ background: 'white' }}
+                />
+                <a
+                  href="https://www.linkedin.com/posts/lakshya-chalana-886306285_aws-86-services-we-learned-activity-7350550833064775680-aLPr?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute left-1/2 -translate-x-1/2 bottom-4 px-6 py-3 rounded-full font-semibold text-white shadow-lg backdrop-blur-md bg-white/30 dark:bg-gray-900/30 border border-white/40 dark:border-gray-800/40 transition-all duration-300 hover:bg-white/60 hover:dark:bg-gray-900/60 hover:shadow-teal-400/60 hover:shadow-lg hover:text-teal-700 dark:hover:text-teal-300 focus:outline-none"
+                  style={{
+                    boxShadow: '0 4px 24px 0 rgba(45,212,191,0.25)',
+                    backdropFilter: 'blur(8px)',
+                  }}
+                >
+                  View on LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Third Row: AWS 200+ Services Featured */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* AWS 200+ Services - Left */}
+            <div className="lg:pr-8">
+              <div className="text-center lg:text-left mb-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  Amazon AWS: 200+ Services
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Presenting and understanding AWS’s vast cloud ecosystem, with a focus on DocumentDB and real-world scaling. <a href="https://www.linkedin.com/posts/lakshya-chalana-886306285_amazonaws-cloudcomputing-aws200services-activity-7350387059984900096-C5Xq?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE" target="_blank" rel="noopener noreferrer" className="underline text-teal-600 dark:text-teal-400">Read more</a>
+                </p>
+              </div>
+              <div className="relative">
+                <img
+                  src={aws200Img}
+                  alt="Amazon AWS 200+ Services"
+                  className="rounded-lg shadow-lg border border-gray-200 dark:border-gray-800 w-full"
+                  style={{ background: 'white' }}
+                />
+                <a
+                  href="https://www.linkedin.com/posts/lakshya-chalana-886306285_amazonaws-cloudcomputing-aws200services-activity-7350387059984900096-C5Xq?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute left-1/2 -translate-x-1/2 bottom-4 px-6 py-3 rounded-full font-semibold text-white shadow-lg backdrop-blur-md bg-white/30 dark:bg-gray-900/30 border border-white/40 dark:border-gray-800/40 transition-all duration-300 hover:bg-white/60 hover:dark:bg-gray-900/60 hover:shadow-teal-400/60 hover:shadow-lg hover:text-teal-700 dark:hover:text-teal-300 focus:outline-none"
+                  style={{
+                    boxShadow: '0 4px 24px 0 rgba(45,212,191,0.25)',
+                    backdropFilter: 'blur(8px)',
+                  }}
+                >
+                  View on LinkedIn
+                </a>
+              </div>
+            </div>
             {/* Empty space for balance - Right */}
             <div className="lg:pl-8 lg:pt-12">
               <div className="text-center lg:text-left mb-6">

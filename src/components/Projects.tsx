@@ -1,10 +1,13 @@
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Linkedin } from 'lucide-react';
 import saTaskManagerImg from '../assets/5.png';
 import smartReviewImg from '../assets/4.png';
 import secureLoginImg from '../assets/3.png';
 import devopsProjectImg from '../assets/6.png';
 import portfolioImg from '../assets/7.png';
+import streamlitConcertImg from '../assets/8.png';
+import geminiExpertImg from '../assets/9.png';
+import webScrapingImg from '../assets/10.png';
 
 const Projects: React.FC = () => {
   const majorProjects = [
@@ -31,22 +34,31 @@ const Projects: React.FC = () => {
 
   const minorProjects = [
     {
-      title: 'Gemini Expert Advisor',
-      description: 'A custom GenAI project built using Gemini 2.5 Flash model via API. Features multi-domain expertise covering tech, business, learning, and creative ideas with a user-friendly Gradio interface.',
-      technologies: ['Gemini API', 'Gradio', 'Python', 'Prompt Engineering'],
-      github: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_genai-gemini-gradio-activity-7345145243517800448-rQHZ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
-      features: ['Multi-domain expertise', 'Gradio interface', 'AI-powered responses', 'Custom use case'],
-      image: saTaskManagerImg, // Using different image to avoid reuse
-      imageAlt: 'Gemini Expert Advisor screenshot',
-    },
-    {
       title: 'Streamlit Concert Booking App',
       description: 'A complete Concert/Musical Festival ticket booking application built with Streamlit. Features registration, payment processing with QR codes, and WhatsApp integration for booking confirmations.',
       technologies: ['Streamlit', 'Python', 'PIL', 'Session State'],
-      github: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_streamlit-pythonproject-internshiplearning-activity-7341824533571506176-t82V?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
+      linkedin: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_streamlit-pythonproject-internshiplearning-activity-7341824533571506176-t82V?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
       features: ['Ticket booking system', 'QR code payments', 'WhatsApp integration', 'No database required'],
-      image: smartReviewImg, // Using different image to avoid reuse
+      image: streamlitConcertImg,
       imageAlt: 'Streamlit Concert Booking App screenshot',
+    },
+    {
+      title: 'GenAI + Web Scraping: Real-time Medicine Info',
+      description: 'A self-use case that pulls real-time medicine info using AI. Scrapes Tata 1mg for salt composition, availability, and price, processes user input with Gemini API, and displays results instantly in a Streamlit UI.',
+      technologies: ['Gemini API', 'BeautifulSoup', 'Streamlit', 'Web Scraping', 'Python'],
+      linkedin: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_genai-geminiapi-webscraping-activity-7350052616640356352-igLw?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
+      features: ['Live data scraping', 'AI-powered input', 'Instant results', 'Clean Streamlit UI'],
+      image: webScrapingImg,
+      imageAlt: 'GenAI + Web Scraping Medicine Info screenshot',
+    },
+    {
+      title: 'Gemini Expert Advisor',
+      description: 'A custom GenAI project built using Gemini 2.5 Flash model via API. Features multi-domain expertise covering tech, business, learning, and creative ideas with a user-friendly Gradio interface.',
+      technologies: ['Gemini API', 'Gradio', 'Python', 'Prompt Engineering'],
+      linkedin: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_genai-gemini-gradio-activity-7345145243517800448-rQHZ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
+      features: ['Multi-domain expertise', 'Gradio interface', 'AI-powered responses', 'Custom use case'],
+      image: geminiExpertImg,
+      imageAlt: 'Gemini Expert Advisor screenshot',
     },
     {
       title: 'SA Task Manager',
@@ -113,23 +125,26 @@ const Projects: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-3 sm:px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg text-xs sm:text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 whitespace-nowrap"
               >
-                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                 View Post
               </a>
             )}
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center justify-center px-3 sm:px-4 py-2 rounded-full shadow-lg text-xs sm:text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 whitespace-nowrap ${
-                isNew 
-                  ? 'bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white focus:ring-teal-400' 
-                  : 'bg-teal-600 hover:bg-teal-700 text-white focus:ring-teal-400'
-              }`}
-            >
-              <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-              {project.linkedin ? 'View Code' : 'View Project'}
-            </a>
+            {/* Only show GitHub button if the link is not a LinkedIn URL */}
+            {project.github && !project.github.includes('linkedin.com') && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center justify-center px-3 sm:px-4 py-2 rounded-full shadow-lg text-xs sm:text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 whitespace-nowrap ${
+                  isNew 
+                    ? 'bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white focus:ring-teal-400' 
+                    : 'bg-teal-600 hover:bg-teal-700 text-white focus:ring-teal-400'
+                }`}
+              >
+                <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                View Code
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -283,7 +298,7 @@ const Projects: React.FC = () => {
                 key={index} 
                 project={project} 
                 index={index} 
-                isNew={index < 2} // First 2 projects (Gemini and Streamlit) are new
+                isNew={index < 3} // First 3 projects (Streamlit, GenAI, Gemini) are new
               />
             ))}
           </div>

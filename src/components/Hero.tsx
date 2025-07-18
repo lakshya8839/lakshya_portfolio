@@ -77,27 +77,27 @@ const Hero: React.FC = () => {
           <div className="relative flex justify-center items-center">
             {/* Modern, animated glowing circles behind profile picture */}
             <div className="absolute inset-0 flex items-center justify-center z-0">
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem]">
+              <div className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem]">
                 {/* Outermost glowing, rotating circle */}
-                <div className="absolute inset-0 rounded-full border-4 border-teal-400/30 animate-outer-glow-spin"></div>
+                <div className="absolute inset-0 rounded-full border-2 sm:border-4 border-teal-400/30 animate-outer-glow-spin"></div>
                 {/* Pulsing glow circle */}
-                <div className="absolute inset-8 rounded-full bg-teal-400/10 blur-2xl animate-glow-pulse"></div>
+                <div className="absolute inset-4 sm:inset-8 rounded-full bg-teal-400/10 blur-xl sm:blur-2xl animate-glow-pulse"></div>
                 {/* Modern animated circles and 3D-like squares */}
                 {/* Circles */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-teal-400/40 rounded-full animate-circle-revolve"></div>
-                <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-teal-300/35 rounded-full animate-circle-revolve"></div>
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-10 sm:h-10 bg-teal-400/40 rounded-full animate-circle-revolve"></div>
+                <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-5 h-5 sm:w-8 sm:h-8 bg-teal-300/35 rounded-full animate-circle-revolve"></div>
                 {/* 3D-like squares */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-br from-teal-400 to-blue-400 rounded-lg shadow-lg animate-square-revolve"></div>
-                <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7 bg-gradient-to-br from-blue-400 to-teal-400 rounded-lg shadow-md animate-square-revolve-reverse"></div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-5 h-5 sm:w-8 sm:h-8 bg-gradient-to-br from-teal-400 to-blue-400 rounded-lg shadow-lg animate-square-revolve"></div>
+                <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 sm:w-7 sm:h-7 bg-gradient-to-br from-blue-400 to-teal-400 rounded-lg shadow-md animate-square-revolve-reverse"></div>
                 {/* Inner shapes (mix) */}
-                <div className="absolute top-1/4 right-1/4 w-6 h-6 bg-teal-400/50 rounded-full animate-circle-revolve-reverse"></div>
-                <div className="absolute bottom-1/4 left-1/4 w-5 h-5 bg-gradient-to-br from-blue-300 to-teal-300 rounded-lg shadow animate-square-revolve"></div>
-                <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-teal-500/40 rounded-full animate-circle-revolve-reverse"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-4 h-4 bg-gradient-to-br from-teal-500 to-blue-500 rounded-lg shadow animate-square-revolve-reverse"></div>
+                <div className="absolute top-1/4 right-1/4 w-4 h-4 sm:w-6 sm:h-6 bg-teal-400/50 rounded-full animate-circle-revolve-reverse"></div>
+                <div className="absolute bottom-1/4 left-1/4 w-3 h-3 sm:w-5 sm:h-5 bg-gradient-to-br from-blue-300 to-teal-300 rounded-lg shadow animate-square-revolve"></div>
+                <div className="absolute top-1/4 left-1/4 w-3 h-3 sm:w-4 sm:h-4 bg-teal-500/40 rounded-full animate-circle-revolve-reverse"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-br from-teal-500 to-blue-500 rounded-lg shadow animate-square-revolve-reverse"></div>
               </div>
             </div>
             {/* Profile picture (larger, centered, always on top) */}
-            <div className="relative z-10 w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] rounded-full bg-white p-1 shadow-2xl flex items-center justify-center">
+            <div className="relative z-10 w-64 h-64 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] rounded-full bg-white p-1 shadow-2xl flex items-center justify-center">
               <img
                 src={profileImg}
                 alt="Profile"

@@ -803,3 +803,36 @@ section {
   inset: 0;
   z-index: 20;
 }
+
+/* Hero section animations */
+@keyframes outer-glow-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-outer-glow-spin {
+  animation: outer-glow-spin 20s linear infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes square-revolve {
+  0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+}
+.animate-square-revolve {
+  animation: square-revolve 15s linear infinite;
+}
+
+@keyframes square-revolve-reverse {
+  0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+  100% { transform: rotate(-360deg) translateX(30px) rotate(360deg); }
+}
+.animate-square-revolve-reverse {
+  animation: square-revolve-reverse 18s linear infinite;
+}

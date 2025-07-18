@@ -1,8 +1,11 @@
-import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronDown, Bot } from 'lucide-react';
 import profileImg from '../assets/1.jpg';
+import AIChatbot from './AIChatbot';
 
 const Hero: React.FC = () => {
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -103,6 +106,17 @@ const Hero: React.FC = () => {
                 decoding="async"
               />
             </div>
+            
+            {/* Mobile AI Button - Only visible on mobile */}
+            <div className="lg:hidden mt-8 flex justify-center">
+              <button
+                onClick={() => setIsChatbotOpen(true)}
+                className="inline-flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-600 text-white font-medium rounded-full transition-all duration-300 hover:from-teal-600 hover:to-blue-700 hover:scale-105 hover:shadow-lg animate-fade-in-delay-3"
+              >
+                <Bot className="w-5 h-5" />
+                <span>Ask AI Assistant</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -120,6 +134,9 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white cursor-pointer" onClick={() => scrollToSection('about')}>
         <ChevronDown size={24} />
       </div>
+
+      {/* AI Chatbot */}
+      <AIChatbot isOpen={isChatbotOpen} onClose={() => setIsChatbotOpen(false)} />
     </section>
   );
 };

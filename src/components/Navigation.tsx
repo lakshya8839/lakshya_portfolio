@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
+import AIChatbot from './AIChatbot';
 
 interface NavigationProps {
   isDarkMode: boolean;
@@ -9,6 +10,7 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -85,7 +87,7 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
                   <span className="text-base font-semibold text-white mr-2 whitespace-nowrap select-none">
                     Dive deeper in AI Mode
                   </span>
-                  <button className="ml-1 p-1.5 rounded-lg hover:bg-white/10 transition-colors duration-300 flex items-center justify-center" style={{ minWidth: '32px', minHeight: '32px' }}>
+                  <button className="ml-1 p-1.5 rounded-lg hover:bg-white/10 transition-colors duration-300 flex items-center justify-center" style={{ minWidth: '32px', minHeight: '32px' }} onClick={() => setIsChatbotOpen(true)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-white opacity-70 group-hover:opacity-100">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 10.5V6.75A2.25 2.25 0 0011.75 4.5h-6.5A2.25 2.25 0 003 6.75v10.5A2.25 2.25 0 005.25 19.5h6.5A2.25 2.25 0 0014 17.25v-3.75m5.25-2.25H9.75m0 0l3-3m-3 3l3 3" />
                     </svg>
@@ -136,6 +138,9 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
           </div>
         </div>
       )}
+
+      {/* AI Chatbot */}
+      <AIChatbot isOpen={isChatbotOpen} onClose={() => setIsChatbotOpen(false)} />
     </nav>
   );
 };

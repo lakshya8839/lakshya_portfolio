@@ -90,6 +90,14 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ isOpen, onClose }) => {
         Education: Bachelor's in Computer Science
         
         Experience: Tech Intern at LinuxWorld Informatics Pvt Ltd - full-stack development, DevOps, cloud technologies
+        
+        Navigation Sections:
+        - Home: Main landing page with introduction
+        - About: Education timeline and background
+        - Projects: Detailed project showcase with links
+        - Skills: Technical skills and expertise
+        - Certifications: Professional certifications
+        - Contact: Contact information and social links
       `;
 
       const apiMessages = [
@@ -120,13 +128,16 @@ RESPONSE RULES:
 - If asked about projects, mention only key features and tech stack
 - If asked about skills, categorize them clearly but briefly
 - Structure information in organized points
+- IMPORTANT: If someone asks about contact info, navigation, or how to find something, direct them to the specific section (e.g., "Go to the Contact section" or "Check the Projects section")
+- Only mention projects that are actually listed in the portfolio content
+- If asked about something not in the portfolio, suggest checking the relevant section
 
 Portfolio Content:
 ${portfolioContent}
 
 User Question: ${userText}
 
-Provide a concise, structured answer with clear bullet points.`
+Provide a concise, structured answer with clear bullet points. If the question is about navigation or finding information, direct them to the appropriate section.`
                   }]
                 }]
               })

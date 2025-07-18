@@ -69,7 +69,7 @@ const About: React.FC = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A passionate tech intern with a strong foundation in computer science and hands-on experience in full-stack development.
+            A passionate tech intern with a strong foundation in computer science and hands-on experience in Generative AI and Machine Learning.
           </p>
         </div>
 

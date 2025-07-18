@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
           <div className="relative flex justify-center items-center">
             {/* Modern, animated glowing circles behind profile picture */}
             <div className="absolute inset-0 flex items-center justify-center z-0">
-              <div className="relative w-[28rem] h-[28rem]">
+              <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem]">
                 {/* Outermost glowing, rotating circle */}
                 <div className="absolute inset-0 rounded-full border-4 border-teal-400/30 animate-outer-glow-spin"></div>
                 {/* Pulsing glow circle */}

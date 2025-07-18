@@ -27,7 +27,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ isOpen, onClose }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyD3sew6USeifzQGiIYp8OOwFUjPwUb9sQ8";
         const MODEL = "gemini-2.0-flash-exp";
 
   // Check if API key is loaded

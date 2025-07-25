@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ExternalLink, Github, Clock, Linkedin } from 'lucide-react';
 
 const linuxWorldTasks = [
@@ -250,67 +250,88 @@ const techColumns: TechColumn[] = [
   { key: 'aws', title: 'Cloud Automation', color: 'border-yellow-400', tasks: awsTasks },
 ];
 
+// Flatten all tasks with category info
+const allTasks: (Task & { category: string; color: string })[] = [];
+techColumns.forEach(col => {
+  col.tasks.forEach(task => {
+    allTasks.push({ ...task, category: col.title, color: col.color });
+  });
+});
+
 const LinuxWorldWork: React.FC = () => {
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
   return (
     <section id="linuxworld-work" className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Live Work @ LinuxWorld
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Ongoing tasks and projects from my internship at LinuxWorld Informatics Pvt Ltd. This section is updated regularly with my latest work and learning outcomes.
           </p>
         </div>
-        <div className="space-y-16">
-          {techColumns.map((col: TechColumn) => (
-            <div key={col.key}>
-              <h3 className="text-2xl font-bold text-teal-700 dark:text-teal-300 mb-2 flex items-center gap-2">
-                {col.title}
-                <span className="flex-1 h-px bg-gradient-to-r from-teal-400 via-gray-300 to-blue-400 dark:from-teal-700 dark:via-gray-700 dark:to-blue-700 ml-4"></span>
-              </h3>
-              <div className="space-y-6 mt-6">
-                {col.tasks.length > 0 ? (
-                  col.tasks.map((task: Task, idx: number) => (
-                    <div key={idx} className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 gap-2">
-                        <div className="flex items-center gap-2">
-                          <div className={`px-3 py-1 rounded-full text-xs font-medium ${statusColors[task.status] || 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200'}`}>{task.status}</div>
-                          <span className="flex items-center text-xs text-gray-500 dark:text-gray-400"><Clock className="w-4 h-4 mr-1" />{task.updated}</span>
-                        </div>
-                        {/* Button: GitHub or LinkedIn based on link */}
-                        {task.github.includes('github.com') ? (
-                          <a
-                            href={task.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full transition-all duration-300 hover:scale-105 text-xs"
-                          >
-                            <Github className="w-4 h-4 mr-2" />
-                            View on GitHub
-                          </a>
-                        ) : task.github.includes('linkedin.com') ? (
-                          <a
-                            href={task.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 hover:scale-105 text-xs"
-                          >
-                            <Linkedin className="w-4 h-4 mr-2" />
-                            View on LinkedIn
-                          </a>
-                        ) : null}
+        <div className="w-full space-y-16">
+          {techColumns.map((col) => {
+            const showAll = expandedCategories[col.key];
+            const visibleTasks = showAll ? col.tasks : col.tasks.slice(0, 6);
+            return (
+              <div key={col.key} className="">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className={`inline-block w-2 h-8 rounded-full ${col.color} bg-gradient-to-b from-teal-400 to-blue-400`}></span>
+                  <h3 className="text-2xl font-bold text-teal-700 dark:text-teal-300">{col.title}</h3>
+                  <span className="flex-1 h-px bg-gradient-to-r from-teal-400 via-gray-300 to-blue-400 dark:from-teal-700 dark:via-gray-700 dark:to-blue-700 ml-2"></span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {visibleTasks.map((task, idx) => (
+                    <div
+                      key={idx}
+                      className="animate-fade-in bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg"
+                      style={{ animationDelay: `${idx * 40}ms` }}
+                    >
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${statusColors[task.status] || 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200'}`}>{task.status}</span>
+                        <span className="flex items-center text-xs text-gray-500 dark:text-gray-400 ml-auto"><Clock className="w-4 h-4 mr-1" />{task.updated}</span>
                       </div>
                       <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-teal-600 transition-colors duration-300">{task.title}</h4>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-2">{task.description}</p>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">{task.description}</p>
+                      {task.github.includes('github.com') ? (
+                        <a
+                          href={task.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full transition-all duration-300 hover:scale-105 text-xs"
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          View on GitHub
+                        </a>
+                      ) : task.github.includes('linkedin.com') ? (
+                        <a
+                          href={task.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 hover:scale-105 text-xs"
+                        >
+                          <Linkedin className="w-4 h-4 mr-2" />
+                          View on LinkedIn
+                        </a>
+                      ) : null}
                     </div>
-                  ))
-                ) : (
-                  <div className="text-gray-400 dark:text-gray-500 py-8 text-center">No tasks yet for this category.</div>
+                  ))}
+                </div>
+                {col.tasks.length > 6 && (
+                  <div className="flex justify-center mt-6">
+                    <button
+                      className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 text-white font-semibold shadow hover:from-blue-600 hover:to-teal-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                      onClick={() => setExpandedCategories((prev) => ({ ...prev, [col.key]: !showAll }))}
+                    >
+                      {showAll ? 'Show Less' : `Show More (${col.tasks.length - 6})`}
+                    </button>
+                  </div>
                 )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

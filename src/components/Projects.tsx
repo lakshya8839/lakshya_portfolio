@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ExternalLink, Github, Linkedin } from 'lucide-react';
 import saTaskManagerImg from '../assets/5.png';
 import smartReviewImg from '../assets/4.png';
@@ -8,9 +8,85 @@ import portfolioImg from '../assets/7.png';
 import streamlitConcertImg from '../assets/8.png';
 import geminiExpertImg from '../assets/9.png';
 import webScrapingImg from '../assets/10.png';
+import cacheMemoryImg from '../assets/13.jpg';
+import kubernetesJenkinsImg from '../assets/14.jpg';
+import agenticAIImg from '../assets/15.png';
+import commandHubImg from '../assets/16.png';
+import kubernetesJenkinsImg2 from '../assets/17.png';
+import kubernetesJenkinsImg3 from '../assets/18.png';
+import commandHubUpdate1Img from '../assets/20.jpg';
 
 const Projects: React.FC = () => {
   const majorProjects = [
+    {
+      title: 'Kubernetes with Jenkins (Automation)',
+      description: 'Automated the full DevOps workflow: wrote a Flask app, containerized it, built and pushed Docker images with Jenkins, and deployed seamlessly on Kubernetes. This project connected all the DevOps pieces into a real, working pipeline.',
+      technologies: ['Kubernetes', 'Jenkins', 'Docker', 'Flask', 'GitHub'],
+      linkedin: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_devops-kubernetes-jenkins-activity-7352753287558803456-lDP0?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
+      github: 'https://github.com/lakshya8839/kubernetes_project_1.git',
+      features: [
+        'End-to-end CI/CD pipeline with Jenkins',
+        'Automated Docker image build and push',
+        'Kubernetes deployment',
+        'Flask app containerization',
+        'Real-world DevOps workflow'
+      ],
+      image: kubernetesJenkinsImg,
+      imageAlt: 'Kubernetes with Jenkins Automation screenshot',
+    },
+    {
+      title: 'Cache Memory Retrieve Data',
+      description: 'Designed a microservices backend with two Flask services, PostgreSQL for storage, Redis for caching, and Docker Compose for orchestration. Focused on real-world data flow and service interaction.',
+      technologies: ['Flask', 'Docker Compose', 'PostgreSQL', 'Redis', 'Microservices'],
+      linkedin: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_microservicesarchitecture-redis-postgresql-activity-7352934887210864641-hegf?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
+      features: [
+        'Microservices architecture',
+        'Independent Flask services',
+        'PostgreSQL persistent storage',
+        'Redis caching layer',
+        'Docker Compose orchestration'
+      ],
+      image: cacheMemoryImg,
+      imageAlt: 'Cache Memory Retrieve Data screenshot',
+    },
+    {
+      title: 'Menu Based Project - CommandHub',
+      description: 'A Python menu tool to run Linux commands on a remote RHEL root account via SSH. Built for convenience and learning, with code in Jupyter Notebook and easy expansion for more commands.',
+      technologies: ['Python', 'SSH', 'Linux', 'Jupyter Notebook'],
+      linkedin: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_ssh-python-linux-activity-7342597606079897600-zx8y?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
+      features: [
+        'Menu-driven Linux command execution',
+        'SSH root access integration',
+        'Jupyter Notebook codebase',
+        'Expandable command logic'
+      ],
+      image: commandHubImg,
+      imageAlt: 'Menu Based Project CommandHub screenshot',
+      updates: [
+        {
+          date: '2024-06-01',
+          title: 'Initial Release',
+          description: 'Launched the first version with SSH-based Linux command execution and menu-driven interface.'
+        },
+        {
+          date: '2024-06-10',
+          title: 'Added Command Expansion',
+          description: 'Introduced support for adding new commands and logic dynamically.'
+        },
+        {
+          date: '2024-06-15',
+          title: 'UI/UX Improvements',
+          description: 'Enhanced the menu design for better usability and modern look.'
+        },
+        {
+          date: '2024-06-20',
+          title: 'Streamlit Integration & Major Expansion',
+          description: `Finally brought it all together — my CommandHub Project, now designed on Streamlit.\n\nStarted as a simple menu-based CLI project, now it’s a single-page platform combining: 50+ Linux & Windows Commands, Docker Commands, Gemini Expert Advisor (LLM-based), JavaScript tools (camera, mail), and my Event Pass Project — all in one flow.`,
+          linkedin: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_commandhub-streamlit-python-activity-7346941722913927168-jefo?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
+          image: commandHubUpdate1Img
+        }
+      ]
+    },
     {
       title: 'Lakshya Chalana Portfolio',
       description: 'A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, dark mode, and a professional design showcasing my skills and projects.',
@@ -33,6 +109,20 @@ const Projects: React.FC = () => {
   ];
 
   const minorProjects = [
+    {
+      title: 'Agentic AI Use Case Product - G.O.A.T',
+      description: 'GOAT is an Agentic AI product on Solana blockchain that automates tasks, interacts with smart contracts, and handles complex workflows—showcasing GenAI-powered real execution, not just responses.',
+      technologies: ['Agentic AI', 'GenAI', 'Solana', 'Automation'],
+      linkedin: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_agenticai-genaiops-solana-activity-7349836475871469568-SuaX?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEVHYWYBuyhNONblNN_cYP0KU9JSzwHJAjE',
+      features: [
+        'Solana blockchain integration',
+        'Agentic AI automation',
+        'Smart contract interaction',
+        'Complex workflow handling'
+      ],
+      image: agenticAIImg,
+      imageAlt: 'Agentic AI Use Case Product GOAT screenshot',
+    },
     {
       title: 'Streamlit Concert Booking App',
       description: 'A complete Concert/Musical Festival ticket booking application built with Streamlit. Features registration, payment processing with QR codes, and WhatsApp integration for booking confirmations.',
@@ -108,13 +198,33 @@ const Projects: React.FC = () => {
       
       {/* Project Image with Hover Overlay */}
       <div className="relative w-full" style={{ height: '180px' }}>
-        <img
-          src={project.image}
-          alt={project.imageAlt}
-          className={`object-cover w-full h-full rounded-t-2xl transition-all duration-300 ${
-            isNew ? 'group-hover:scale-105' : ''
-          }`}
-        />
+        {project.title === 'Kubernetes with Jenkins (Automation)' ? (
+          <div className="flex flex-row w-full h-full bg-black">
+            <img
+              src={project.image}
+              alt={project.imageAlt}
+              className="object-contain w-1/3 h-full rounded-tl-2xl transition-all duration-300"
+            />
+            <img
+              src={kubernetesJenkinsImg2}
+              alt="Kubernetes with Jenkins Additional screenshot 1"
+              className="object-contain w-1/3 h-full transition-all duration-300"
+            />
+            <img
+              src={kubernetesJenkinsImg3}
+              alt="Kubernetes with Jenkins Additional screenshot 2"
+              className="object-contain w-1/3 h-full rounded-tr-2xl transition-all duration-300"
+            />
+          </div>
+        ) : (
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            className={`w-full h-full rounded-t-2xl transition-all duration-300 ${
+              'object-cover'
+            } ${isNew ? 'group-hover:scale-105' : ''}`}
+          />
+        )}
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl">
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 px-4">
@@ -156,7 +266,7 @@ const Projects: React.FC = () => {
         }`}>
           {project.title}
         </h3>
-        <p className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base line-clamp-3">
+        <p className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
           {project.description}
         </p>
         <div className="mb-3 flex flex-wrap gap-1 sm:gap-2">
@@ -189,6 +299,21 @@ const Projects: React.FC = () => {
             ))}
           </ul>
         </div>
+        {/* Floating Updates Button for CommandHub */}
+        {project.title === 'Menu Based Project - CommandHub' && project.updates && (
+          <div className="pointer-events-none">
+            <button
+              type="button"
+              className="pointer-events-auto fixed md:absolute bottom-6 right-6 md:bottom-4 md:right-4 z-30 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full font-semibold shadow-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+              style={{maxWidth: '90vw'}} // Prevents overflow on small screens
+              onClick={() => setShowCommandHubModal(true)}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              View Updates
+              <span className="ml-1 bg-white text-blue-600 rounded-full px-2 py-0.5 text-xs font-bold">{project.updates.length}</span>
+            </button>
+          </div>
+        )}
       </div>
       
       {/* Premium Glow Effect for New Projects */}
@@ -197,6 +322,11 @@ const Projects: React.FC = () => {
       )}
     </div>
   );
+
+  // State for expanding CommandHub updates
+  const [showCommandHubUpdates, setShowCommandHubUpdates] = useState(false);
+  // Add state for CommandHub updates modal
+  const [showCommandHubModal, setShowCommandHubModal] = useState(false);
 
   return (
     <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
@@ -272,7 +402,7 @@ const Projects: React.FC = () => {
                 key={index} 
                 project={project} 
                 index={index} 
-                isNew={true} // Major projects are always treated as new/premium
+                isNew={true}
               />
             ))}
           </div>
@@ -298,12 +428,123 @@ const Projects: React.FC = () => {
                 key={index} 
                 project={project} 
                 index={index} 
-                isNew={index < 3} // First 3 projects (Streamlit, GenAI, Gemini) are new
+                isNew={![
+                  'Secure Login System',
+                  'SmartReview – AI Code Review Platform',
+                  'SA Task Manager'
+                ].includes(project.title)}
               />
             ))}
           </div>
         </div>
+
+        {/* Project Updates Section */}
+        <section className="max-w-5xl mx-auto mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+            <span className="inline-block w-2 h-8 bg-gradient-to-b from-blue-500 to-teal-400 rounded-full mr-2"></span>
+            Project Updates
+          </h2>
+          <div className="space-y-6">
+            {/* CommandHub Updates Card */}
+            <div
+              className={`transition-all duration-500 bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700 cursor-pointer overflow-hidden ${showCommandHubUpdates ? 'p-6' : 'p-4 hover:shadow-2xl'}`}
+              onClick={() => setShowCommandHubUpdates((prev) => !prev)}
+            >
+              <div className="flex items-center gap-4">
+                <img src={commandHubImg} alt="CommandHub" className="w-16 h-16 rounded-xl object-cover border border-blue-300 dark:border-blue-700" />
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-blue-700 dark:text-blue-300 mb-1">Menu Based Project - CommandHub</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Click to {showCommandHubUpdates ? 'collapse' : 'expand'} updates</p>
+                  {!showCommandHubUpdates && (
+                    <div className="mt-2">
+                      <span className="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold mr-2">Latest Update</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">{majorProjects.find(p => p.title === 'Menu Based Project - CommandHub')?.updates?.slice(-1)[0]?.title}</span>
+                    </div>
+                  )}
+                </div>
+                <svg className={`w-6 h-6 text-blue-500 transition-transform duration-300 ${showCommandHubUpdates ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </div>
+              {showCommandHubUpdates && (
+                <div className="mt-8">
+                  <h4 className="text-base font-semibold text-blue-700 dark:text-blue-300 mb-4 uppercase tracking-wide">Key Updates Timeline</h4>
+                  <ol className="relative border-l-2 border-blue-400 dark:border-blue-600 ml-2">
+                    {majorProjects.find(p => p.title === 'Menu Based Project - CommandHub')?.updates?.map((update: {date: string; title: string; description: string; linkedin?: string; image?: string}, idx: number) => (
+                      <li key={idx} className="mb-10 ml-4 relative">
+                        <div className="absolute w-3 h-3 bg-blue-500 rounded-full mt-1.5 -left-1.5 border-2 border-white dark:border-gray-900"></div>
+                        <div className="flex flex-col md:flex-row gap-6 items-start">
+                          {update.image && (
+                            <img src={update.image} alt={update.title + ' update image'} className="rounded-lg shadow-md w-40 h-28 object-cover border border-blue-200 dark:border-blue-700" />
+                          )}
+                          <div className="flex-1">
+                            <span className="text-xs text-gray-500 dark:text-gray-400 mb-1 block">{update.date}</span>
+                            <span className="font-semibold text-base text-blue-700 dark:text-blue-300 block mb-1">{update.title}</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-line block mb-2">{update.description}</span>
+                            {update.linkedin && (
+                              <a
+                                href={update.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow text-xs font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 mt-1 w-fit"
+                              >
+                                <Linkedin className="w-4 h-4 mr-1" /> View LinkedIn Post
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
       </div>
+
+      {/* CommandHub Updates Modal */}
+      {showCommandHubModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-blue-200 dark:border-blue-700 max-w-2xl w-full mx-4 p-8 relative animate-fade-in">
+            <button
+              className="absolute top-4 right-4 text-gray-400 hover:text-blue-600 text-2xl font-bold focus:outline-none"
+              onClick={() => setShowCommandHubModal(false)}
+              aria-label="Close updates modal"
+            >
+              &times;
+            </button>
+            <h3 className="text-xl font-bold text-blue-700 dark:text-blue-300 mb-6 text-center">Menu Based Project - CommandHub<br/><span className='text-base font-normal text-gray-500 dark:text-gray-400'>Key Updates Timeline</span></h3>
+            <div className="max-h-[60vh] overflow-y-auto pr-2">
+              <ol className="relative border-l-2 border-blue-400 dark:border-blue-600 ml-2">
+                {majorProjects.find(p => p.title === 'Menu Based Project - CommandHub')?.updates?.map((update: {date: string; title: string; description: string; linkedin?: string; image?: string}, idx: number) => (
+                  <li key={idx} className="mb-10 ml-4 relative">
+                    <div className="absolute w-3 h-3 bg-blue-500 rounded-full mt-1.5 -left-1.5 border-2 border-white dark:border-gray-900"></div>
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+                      {update.image && (
+                        <img src={update.image} alt={update.title + ' update image'} className="rounded-lg shadow-md w-36 h-24 md:w-40 md:h-28 object-cover border border-blue-200 dark:border-blue-700 flex-shrink-0" />
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <span className="text-xs text-gray-500 dark:text-gray-400 mb-1 block break-words">{update.date}</span>
+                        <span className="font-semibold text-base text-blue-700 dark:text-blue-300 block mb-1 break-words">{update.title}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-line block mb-2 break-words">{update.description}</span>
+                        {update.linkedin && (
+                          <a
+                            href={update.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow text-xs font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 mt-1 w-fit"
+                          >
+                            <Linkedin className="w-4 h-4 mr-1" /> View LinkedIn Post
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

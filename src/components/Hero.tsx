@@ -61,10 +61,10 @@ const Hero: React.FC = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-6 animate-fade-in-delay">
-              Tech Intern @ LinuxWorld Informatics Pvt Ltd
+              MLOps and Data Science Enthusiast
             </p>
             <p className="text-lg text-gray-400 mb-8 animate-fade-in-delay-2">
-              Turning ideas into execution through code
+              Oracle Certified | 2x Research Author ! Ex-Intern @ DMV Coretech | Ex-Intern @ LinuxWorld Informatics
             </p>
             <button
               onClick={() => scrollToSection('contact')}

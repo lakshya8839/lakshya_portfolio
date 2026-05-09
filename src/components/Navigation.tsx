@@ -15,6 +15,8 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'key-highlights', label: 'Key Highlights' },
+    { id: 'internship', label: 'Internship' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
     { id: 'certifications', label: 'Certifications' },

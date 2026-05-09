@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, Bot } from 'lucide-react';
-import profileImg from '../assets/1.jpg';
+import profileImg from '../assets/profile.webp';
 import AIChatbot from './AIChatbot';
 
 const Hero: React.FC = () => {
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(17,116,117,0.2),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(17,116,117,0.2),transparent_50%)]"></div>
         {/* Modern, smooth, multi-line river flow animation */}
-        <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden pointer-events-none h-32 sm:h-48 md:h-64 lg:h-80" style={{zIndex: 1}}>
+        <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden pointer-events-none h-32 sm:h-48 md:h-64 lg:h-80" style={{ zIndex: 1 }}>
           <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
             <defs>
               <linearGradient id="river-gradient" x1="0" y1="0" x2="0" y2="1">
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               MLOps and Data Science Enthusiast
             </p>
             <p className="text-lg text-gray-400 mb-8 animate-fade-in-delay-2">
-              Oracle Certified | 2x Research Author ! Ex-Intern @ DMV Coretech | Ex-Intern @ LinuxWorld Informatics
+              Oracle Certified | 2x Research Author | Intern @ IIT Hyderabad | Ex-Intern @ DMV Coretech | Ex-Intern @ LinuxWorld Informatics
             </p>
             <button
               onClick={() => scrollToSection('contact')}
@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
                 decoding="async"
               />
             </div>
-            
+
             {/* Mobile AI Button - Only visible on mobile */}
             <div className="lg:hidden mt-8 flex justify-center">
               <button
@@ -122,11 +122,11 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Smooth, modern animated divider at section boundary */}
-      <div className="absolute left-0 right-0 bottom-0 w-full flex items-end justify-center pointer-events-none" style={{zIndex: 3, height: '8px'}}>
+      <div className="absolute left-0 right-0 bottom-0 w-full flex items-end justify-center pointer-events-none" style={{ zIndex: 3, height: '8px' }}>
         <div className="w-full h-px bg-white/30 relative overflow-hidden">
-          <div className="absolute top-0 h-0.5 bg-gradient-to-r from-teal-400 via-white to-teal-400 rounded-full animate-divider-bar1" style={{width: '90px'}}></div>
-          <div className="absolute top-1 h-0.5 bg-gradient-to-r from-teal-300 via-white to-teal-500 rounded-full animate-divider-bar2" style={{width: '90px'}}></div>
-          <div className="absolute top-2 h-0.5 bg-gradient-to-r from-white via-teal-400 to-white rounded-full animate-divider-bar3" style={{width: '90px'}}></div>
+          <div className="absolute top-0 h-0.5 bg-gradient-to-r from-teal-400 via-white to-teal-400 rounded-full animate-divider-bar1" style={{ width: '90px' }}></div>
+          <div className="absolute top-1 h-0.5 bg-gradient-to-r from-teal-300 via-white to-teal-500 rounded-full animate-divider-bar2" style={{ width: '90px' }}></div>
+          <div className="absolute top-2 h-0.5 bg-gradient-to-r from-white via-teal-400 to-white rounded-full animate-divider-bar3" style={{ width: '90px' }}></div>
         </div>
       </div>
 

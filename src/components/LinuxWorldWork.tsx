@@ -265,8 +265,11 @@ const LinuxWorldWork: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Live Work @ LinuxWorld
+            Live Work @ Linuxworld
           </h2>
+          <p className="text-base font-semibold text-teal-600 dark:text-teal-400 mb-2 tracking-wide uppercase">
+            Previous Task Performed in Internship
+          </p>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Ongoing tasks and projects from my internship at LinuxWorld Informatics Pvt Ltd. This section is updated regularly with my latest work and learning outcomes.
           </p>

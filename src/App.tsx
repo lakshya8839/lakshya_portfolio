@@ -3,6 +3,8 @@ import { Moon, Sun, Download, ExternalLink, Github, Linkedin, Twitter, Mail, Map
 import Hero from './components/Hero';
 import About from './components/About';
 import LinuxWorldWork from './components/LinuxWorldWork';
+import Internship from './components/Internship';
+import KeyHighlights from './components/KeyHighlights';
 import LinkedInFeatured from './components/LinkedInFeatured';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -73,6 +75,8 @@ function App() {
       <main className="relative">
         <Hero />
         <About />
+        <KeyHighlights />
+        <Internship />
         <LinuxWorldWork />
         <LinkedInFeatured />
         <Projects />

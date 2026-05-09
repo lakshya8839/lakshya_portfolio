@@ -110,40 +110,6 @@ const Skills: React.FC = () => {
           ))}
         </div>
 
-        {/* Skills proficiency bars */}
-        <div className="mt-16 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
-            Proficiency Levels
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { skill: 'Python', level: 85 },
-              { skill: 'JavaScript', level: 75 },
-              { skill: 'Flask', level: 80 },
-              { skill: 'MySQL', level: 70 },
-              { skill: 'Git/GitHub', level: 85 },
-              { skill: 'Docker', level: 65 },
-            ].map((item, index) => (
-              <div key={index} className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md border border-gray-200 dark:border-gray-700">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {item.skill}
-                  </span>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    {item.level}%
-                  </span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                  <div
-                    className="bg-teal-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${item.level}%` }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -4,6 +4,22 @@ import { Award, ExternalLink } from 'lucide-react';
 const Certifications: React.FC = () => {
   const certifications = [
     {
+      title: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
+      provider: 'Oracle',
+      date: 'Completed',
+      link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=A91057E1C723CB6A4185F9C9012B11098BCADED1A4AD36591F2CD99609E3FCC2',
+      status: 'Verified',
+      description: 'Certified in fundamental concepts of AI and machine learning, focusing on practical applications within Oracle Cloud Infrastructure.',
+    },
+    {
+      title: 'Google Cloud Career Launchpad – Generative AI Leader Track',
+      provider: 'Google Cloud',
+      date: 'Completed',
+      link: 'https://www.linkedin.com/posts/lakshya-chalana-886306285_googlecloudready-googlecloud-generativeai-activity-7391140630845939712-2fzc',
+      status: 'Verified',
+      description: 'Understanding core concepts of Generative AI, Large Language Models, prompt design, responsible AI practices, and real business use cases.',
+    },
+    {
       title: 'AI for Beginners',
       provider: 'HP LIFE',
       date: 'Completed',
@@ -18,14 +34,6 @@ const Certifications: React.FC = () => {
       link: 'https://oneroadmap.io/skills/ai/certificate/CERT-6F9B4124',
       status: 'Verified',
       description: 'AI skills certification from OneRoadmap, demonstrating proficiency in modern AI concepts and applications.',
-    },
-    {
-      title: 'Pep Sales Star Workshop',
-      provider: 'PEPSICO / Verix',
-      date: 'Completed',
-      link: 'https://www.verix.io/credential/31568c67-3e21-40c0-a225-39cd13b32336/',
-      status: 'Verified',
-      description: 'Recognized for successful completion of the Pep Sales Star Workshop by PEPSICO and Verix.',
     },
   ];
 

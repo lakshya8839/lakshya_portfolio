@@ -11,9 +11,11 @@ const Contact: React.FC = () => {
     email: '',
     message: '',
   });
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitStatus('idle');
     try {
       await emailjs.send(
         'service_g70yav5',
@@ -21,13 +23,17 @@ const Contact: React.FC = () => {
         {
           from_name: formData.name,
           from_email: formData.email,
+          reply_to: formData.email,   // ← ensures Reply-To is the sender's email
           message: formData.message,
         },
         'n7xso1J9Viazz_HGh'
       );
       setFormData({ name: '', email: '', message: '' });
+      setSubmitStatus('success');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
-      // Optionally handle error
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     }
   };
 
@@ -207,11 +213,24 @@ const Contact: React.FC = () => {
                 />
               </div>
 
+              {/* Status feedback */}
+              {submitStatus === 'success' && (
+                <div className="flex items-center gap-2 px-4 py-3 bg-teal-50 dark:bg-teal-900/30 border border-teal-300 dark:border-teal-700 rounded-lg text-teal-700 dark:text-teal-300 text-sm font-medium">
+                  <span>✅</span> Message sent! I'll get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="flex items-center gap-2 px-4 py-3 bg-red-50 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-300 text-sm font-medium">
+                  <span>❌</span> Something went wrong. Please try again or email me directly.
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 focus:ring-4 focus:ring-teal-500/50"
+                className="w-full px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 focus:ring-4 focus:ring-teal-500/50 disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={submitStatus === 'success'}
               >
-                Send Message
+                {submitStatus === 'success' ? 'Message Sent ✓' : 'Send Message'}
               </button>
             </form>
           </div>

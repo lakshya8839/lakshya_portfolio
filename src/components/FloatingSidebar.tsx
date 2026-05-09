@@ -23,7 +23,7 @@ const FloatingSidebar: React.FC = () => {
     },
     {
       name: 'Email',
-      url: 'mailto:lakshya.chalana@example.com',
+      url: 'mailto:chalanalakshya5@gmail.com',
       icon: <Mail className="w-5 h-5" />,
       color: 'hover:bg-red-500',
     },

@@ -64,12 +64,12 @@ const Navigation: React.FC<NavigationProps> = ({ isDarkMode, toggleTheme }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-center space-x-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium text-center transition-all duration-300 ease-in-out ${
                     activeSection === item.id
                       ? 'bg-teal-500/20 dark:bg-teal-400/20 text-teal-700 dark:text-teal-300 shadow-lg backdrop-blur-sm border border-teal-500/30 dark:border-teal-400/30'
                       : 'text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-gray-800/20 hover:text-teal-600 dark:hover:text-teal-400 hover:shadow-md backdrop-blur-sm border border-transparent hover:border-teal-500/20 dark:hover:border-teal-400/20'

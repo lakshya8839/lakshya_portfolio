@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Github, Linkedin, Twitter, Download, MapPin, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter, Download, MapPin, Phone, Eye } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
 // IMPORTANT: Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_USER_ID' with your actual EmailJS values.
@@ -142,20 +142,31 @@ const Contact: React.FC = () => {
             {/* Resume Download */}
             <div className="bg-teal-50 dark:bg-teal-900/20 rounded-2xl p-6 border-2 border-teal-200 dark:border-teal-800">
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Download My Resume
+                My Resume
               </h4>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Get a detailed overview of my experience, skills, and achievements.
               </p>
-              <a
-                href="https://drive.google.com/file/d/1xzQfiS-rr9XINBH2Tl6vmdo2hHwXN_3D/view?usp=drivesdk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full transition-all duration-300 hover:scale-105"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://drive.google.com/file/d/1qD0sEuY0E8g4uI6e08X6M3sgU_KkmwhT/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full transition-all duration-300 hover:scale-105"
+                >
+                  <Eye className="w-4 h-4 mr-2" />
+                  View Resume
+                </a>
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1qD0sEuY0E8g4uI6e08X6M3sgU_KkmwhT"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-teal-600 dark:text-teal-400 border-2 border-teal-600 dark:border-teal-500 hover:bg-teal-50 dark:hover:bg-gray-700 rounded-full transition-all duration-300 hover:scale-105"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download
+                </a>
+              </div>
             </div>
           </div>
 

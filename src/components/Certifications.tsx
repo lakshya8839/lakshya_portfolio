@@ -26,16 +26,36 @@ const Certifications: React.FC = () => {
       link: 'https://www.life-global.org/certificate/21430cab-bd31-491b-847f-0d23f25bf320',
       status: 'Verified',
       description: 'Comprehensive introduction to Artificial Intelligence fundamentals and applications.',
-    },
-    {
-      title: 'OneRoadmap Certificate',
-      provider: 'OneRoadmap',
-      date: 'Completed',
-      link: 'https://oneroadmap.io/skills/ai/certificate/CERT-6F9B4124',
-      status: 'Verified',
-      description: 'AI skills certification from OneRoadmap, demonstrating proficiency in modern AI concepts and applications.',
-    },
+    }
   ];
+
+  const getProviderLogo = (provider: string) => {
+    switch (provider) {
+      case 'Oracle':
+        return (
+          <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+            <title>Oracle</title>
+            <path d="M16.5 2.308h-9A7.508 7.508 0 0 0 0 9.816v4.368a7.508 7.508 0 0 0 7.5 7.508h9a7.508 7.508 0 0 0 7.5-7.508V9.816a7.508 7.508 0 0 0-7.5-7.508zm3.81 11.876a3.815 3.815 0 0 1-3.81 3.81h-9a3.814 3.814 0 0 1-3.81-3.81V9.816a3.814 3.814 0 0 1 3.81-3.81h9a3.815 3.815 0 0 1 3.81 3.81z"/>
+          </svg>
+        );
+      case 'Google Cloud':
+        return (
+          <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+            <title>Google Cloud</title>
+            <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+          </svg>
+        );
+      case 'HP LIFE':
+        return (
+          <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+            <title>HP</title>
+            <path d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12M5.132 15.684l1.32-6.52a.208.208 0 0 1 .203-.164h1.769a.203.203 0 0 1 .198.16l.334 1.554.437-1.408a1.22 1.22 0 0 1 1.18-.706h2.793a1.432 1.432 0 0 1 1.444 1.467 1.6 1.6 0 0 1-.035.334l-.872 4.283h-1.638l.848-4.22a.49.49 0 0 0 .01-.097.436.436 0 0 0-.46-.358H11.53c-.347.01-.632.227-.728.53l-1.02 5.145H8.16l1.353-6.57h-.166l-1.34 6.57H5.132Zm13.593-3.69c0 1.284-1.287 2.106-2.934 2.106h-1.085l-.547 2.584h-1.616l1.528-7.514h2.528c1.556 0 2.126.963 2.126 2.824M16.92 11.75a1.282 1.282 0 0 0-1.358-1.326h-.971l-.64 3.09h.828c1.378 0 2.141-.453 2.141-1.764"/>
+          </svg>
+        );
+      default:
+        return <Award className="w-6 h-6" />;
+    }
+  };
 
   return (
     <section id="certifications" className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
@@ -82,7 +102,7 @@ const Certifications: React.FC = () => {
             >
               <div className="flex items-center mb-4">
                 <div className="p-3 bg-teal-600 rounded-full text-white mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <Award className="w-6 h-6" />
+                  {getProviderLogo(cert.provider)}
                 </div>
                 <div>
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${

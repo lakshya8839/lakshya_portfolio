@@ -108,7 +108,7 @@ const Internship: React.FC = () => {
                         Duration
                       </span>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        11 Nov 2025 — 03 Nov 2026
+                        11 Nov 2025 — 11 March 2026
                       </p>
                     </div>
                   </li>

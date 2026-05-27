@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:backend": "cd rag-backend && .\\venv\\Scripts\\python.exe main.py",
+    "dev:all": "start cmd /c \"cd rag-backend && .\\venv\\Scripts\\python.exe main.py\" && vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -13,7 +15,8 @@
     "emailjs-com": "^3.2.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

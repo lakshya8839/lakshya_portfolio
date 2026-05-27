@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Bot, User } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   id: string;
@@ -27,15 +28,7 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ isOpen, onClose }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyD3sew6USeifzQGiIYp8OOwFUjPwUb9sQ8";
-        const MODEL = "gemini-2.0-flash-exp";
-
-  // Check if API key is loaded
-  useEffect(() => {
-    if (!API_KEY) {
-      console.warn('API Key not configured');
-    }
-  }, [API_KEY]);
+  const API_URL = import.meta.env.VITE_RAG_BACKEND_URL || 'http://localhost:8000';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -67,85 +60,18 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
-      // Portfolio content (local instead of fetching)
-      const portfolioContent = `
-        Lakshya Chalana - Tech Intern at LinuxWorld Informatics Pvt Ltd
-        
-        Skills:
-        Frontend: React, TypeScript, JavaScript, HTML/CSS, Tailwind CSS, Vite, Next.js
-        Backend: Node.js, Express.js, Python, REST APIs, Microservices
-        Databases: MongoDB, PostgreSQL
-        DevOps: Docker, Kubernetes, AWS, Jenkins, CI/CD, Git
-        Other: Linux, Shell Scripting, Agile/Scrum
-        
-        Projects:
-        E-commerce Platform: MERN stack, user auth, product catalog, payment integration, admin dashboard
-        Blog Platform: Next.js, MongoDB, SEO, user auth, rich text editor, comments
-        Portfolio Website: React, TypeScript, Tailwind CSS, responsive design, dark mode, animations
-        Task Management App: React, Node.js, real-time updates, drag-drop, progress tracking
-        Weather Dashboard: React, OpenWeather API, location-based forecasts, interactive charts
-        
-        Certifications: AWS Cloud Practitioner, Docker Associate, Kubernetes Admin, Jenkins Engineer, Linux Foundation
-        
-        Education: Bachelor's in Computer Science
-        
-        Experience: Tech Intern at LinuxWorld Informatics Pvt Ltd - full-stack development, DevOps, cloud technologies
-        
-        Navigation Sections:
-        - Home: Main landing page with introduction
-        - About: Education timeline and background
-        - Projects: Detailed project showcase with links
-        - Skills: Technical skills and expertise
-        - Certifications: Professional certifications
-        - Contact: Contact information and social links
-      `;
+      const response = await fetch(`${API_URL}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userText })
+      });
 
-      const apiMessages = [
-        {
-          role: "system",
-          content: `You are LakshyaBot, a helpful AI assistant for Lakshya Chalana's portfolio. Use the following portfolio content to answer questions. Be friendly, professional, and concise. If asked about something not in the portfolio, politely redirect to relevant information or suggest contacting Lakshya directly.\n\nPortfolio Content:\n${portfolioContent}`
-        },
-        { role: "user", content: userText }
-      ];
-
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                contents: [{
-                  parts: [{
-                    text: `You are LakshyaBot, a concise AI assistant for Lakshya Chalana's portfolio.
-
-RESPONSE RULES:
-- Keep answers brief and to the point
-- Only provide what was specifically asked for
-- ALWAYS structure answers in clear points/bullets
-- Use bullet points (• or -) for all lists
-- No markdown formatting
-- Be professional but concise
-- If asked about projects, mention only key features and tech stack
-- If asked about skills, categorize them clearly but briefly
-- Structure information in organized points
-- IMPORTANT: If someone asks about contact info, navigation, or how to find something, direct them to the specific section (e.g., "Go to the Contact section" or "Check the Projects section")
-- Only mention projects that are actually listed in the portfolio content
-- If asked about something not in the portfolio, suggest checking the relevant section
-
-Portfolio Content:
-${portfolioContent}
-
-User Question: ${userText}
-
-Provide a concise, structured answer with clear bullet points. If the question is about navigation or finding information, direct them to the appropriate section.`
-                  }]
-                }]
-              })
-        }
-      );
+      if (!response.ok) {
+        throw new Error(`Server responded with ${response.status}`);
+      }
 
       const data = await response.json();
-      const botReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that. Please try again!";
+      const botReply = data.reply || "Sorry, I couldn't process that. Please try again!";
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -156,14 +82,7 @@ Provide a concise, structured answer with clear bullet points. If the question i
 
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      // Log error for debugging (without exposing sensitive info)
-      let errorText = "Sorry, I'm having trouble connecting right now. Please try again later or contact Lakshya directly!";
-      
-      if (!API_KEY) {
-        errorText = "AI service is not configured. Please contact the administrator.";
-      } else if (error instanceof Error) {
-        errorText = "Sorry, I'm having trouble connecting right now. Please try again later.";
-      }
+      const errorText = "Sorry, I'm having trouble connecting to the AI assistant right now. Please try again later or contact Lakshya directly!";
       
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -227,7 +146,20 @@ Provide a concise, structured answer with clear bullet points. If the question i
                     <Bot className="w-4 h-4 text-teal-500 mt-1 flex-shrink-0" />
                   )}
                   <div className="flex-1">
-                    <p className="text-sm leading-relaxed">{message.text}</p>
+                    <div className="text-sm leading-relaxed whitespace-pre-wrap">
+                      <ReactMarkdown
+                        components={{
+                          p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                          ul: ({node, ...props}) => <ul className="list-disc pl-4 mb-2 space-y-1" {...props} />,
+                          ol: ({node, ...props}) => <ol className="list-decimal pl-4 mb-2 space-y-1" {...props} />,
+                          li: ({node, ...props}) => <li className="" {...props} />,
+                          strong: ({node, ...props}) => <strong className="font-semibold" {...props} />,
+                          a: ({node, ...props}) => <a className="underline decoration-1 underline-offset-2" {...props} />
+                        }}
+                      >
+                        {message.text}
+                      </ReactMarkdown>
+                    </div>
                     <p className={`text-xs mt-2 ${
                       message.sender === 'user' ? 'text-teal-100' : 'text-gray-500 dark:text-gray-400'
                     }`}>

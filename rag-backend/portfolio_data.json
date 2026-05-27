@@ -1,0 +1,250 @@
+{
+  "personal": {
+    "name": "Lakshya Chalana",
+    "tagline": "MLOps and Data Science Enthusiast",
+    "credentials": "Oracle Certified | 2x Research Author | Intern @ IIT Hyderabad | Ex-Intern @ DMV Coretech | Ex-Intern @ LinuxWorld Informatics",
+    "about": "A passionate tech intern with a strong foundation in computer science and hands-on experience in Generative AI and Machine Learning.",
+    "email": "chalanalakshya5@gmail.com",
+    "phone": "",
+    "location": "Jaipur, India",
+    "github": "https://github.com/Lakshya8839",
+    "linkedin": "https://www.linkedin.com/in/lakshya-chalana-886306285",
+    "twitter": "https://x.com/Chlakshya_8839",
+    "resume": "https://drive.google.com/file/d/1xzQfiS-rr9XINBH2Tl6vmdo2hHwXN_3D/view?usp=drivesdk",
+    "contact_note": "I'm always open to discussing new opportunities, collaborations, or just having a chat about technology."
+  },
+  "education": [
+    {
+      "degree": "B.Tech Computer Science Engineering",
+      "institution": "Poornima College of Engineering, Jaipur",
+      "year": "Expected 2027"
+    },
+    {
+      "degree": "Class XII",
+      "institution": "Sacred Heart Convent School, Suratgarh",
+      "year": "Completed 2022"
+    },
+    {
+      "degree": "Class X",
+      "institution": "Blossom Academy School, Suratgarh",
+      "year": "Completed 2020"
+    }
+  ],
+  "projects": {
+    "major": [
+      {
+        "name": "Kubernetes with Jenkins (Automation)",
+        "description": "Automated the full DevOps workflow: wrote a Flask app, containerized it, built and pushed Docker images with Jenkins, and deployed seamlessly on Kubernetes. This project connected all the DevOps pieces into a real, working pipeline.",
+        "tech": ["Kubernetes", "Jenkins", "Docker", "Flask", "GitHub"],
+        "features": ["End-to-end CI/CD pipeline with Jenkins", "Automated Docker image build and push", "Kubernetes deployment", "Flask app containerization", "Real-world DevOps workflow"],
+        "github": "https://github.com/lakshya8839/kubernetes_project_1.git"
+      },
+      {
+        "name": "Cache Memory Retrieve Data",
+        "description": "Designed a microservices backend with two Flask services, PostgreSQL for storage, Redis for caching, and Docker Compose for orchestration. Focused on real-world data flow and service interaction.",
+        "tech": ["Flask", "Docker Compose", "PostgreSQL", "Redis", "Microservices"],
+        "features": ["Microservices architecture", "Independent Flask services", "PostgreSQL persistent storage", "Redis caching layer", "Docker Compose orchestration"]
+      },
+      {
+        "name": "Menu Based Project - CommandHub",
+        "description": "A Python menu tool to run Linux commands on a remote RHEL root account via SSH. Built for convenience and learning, with code in Jupyter Notebook and easy expansion for more commands.",
+        "tech": ["Python", "SSH", "Linux", "Jupyter Notebook"],
+        "features": ["Menu-driven Linux command execution", "SSH root access integration", "Jupyter Notebook codebase", "Expandable command logic"]
+      },
+      {
+        "name": "Lakshya Chalana Portfolio",
+        "description": "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, dark mode, and a professional design showcasing skills and projects.",
+        "tech": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "features": ["Responsive design", "Dark mode", "Smooth animations", "Professional UI"],
+        "github": "https://github.com/lakshya8839/lakshya_portfolio"
+      },
+      {
+        "name": "DevOps Project (CI/CD Pipeline)",
+        "description": "Implemented a complete CI/CD pipeline using Jenkins, Docker, and GitHub for automated build, test, and deployment processes.",
+        "tech": ["Git/Github", "Jenkins", "Docker"],
+        "features": ["Automated CI/CD pipeline", "Jenkins integration", "Docker containerization"]
+      }
+    ],
+    "minor": [
+      {
+        "name": "Agentic AI Use Case Product - G.O.A.T",
+        "description": "GOAT is an Agentic AI product on Solana blockchain that automates tasks, interacts with smart contracts, and handles complex workflows—showcasing GenAI-powered real execution, not just responses.",
+        "tech": ["Agentic AI", "GenAI", "Solana", "Automation"],
+        "features": ["Solana blockchain integration", "Agentic AI automation", "Smart contract interaction", "Complex workflow handling"]
+      },
+      {
+        "name": "Streamlit Concert Booking App",
+        "description": "A complete Concert/Musical Festival ticket booking application built with Streamlit. Features registration, payment processing with QR codes, and WhatsApp integration for booking confirmations.",
+        "tech": ["Streamlit", "Python", "PIL", "Session State"],
+        "features": ["Ticket booking system", "QR code payments", "WhatsApp integration", "No database required"]
+      },
+      {
+        "name": "GenAI + Web Scraping: Real-time Medicine Info",
+        "description": "A self-use case that pulls real-time medicine info using AI. Scrapes Tata 1mg for salt composition, availability, and price, processes user input with Gemini API, and displays results instantly in a Streamlit UI.",
+        "tech": ["Gemini API", "BeautifulSoup", "Streamlit", "Web Scraping", "Python"]
+      },
+      {
+        "name": "Gemini Expert Advisor",
+        "description": "A custom GenAI project built using Gemini 2.5 Flash model via API. Features multi-domain expertise covering tech, business, learning, and creative ideas with a user-friendly Gradio interface.",
+        "tech": ["Gemini API", "Gradio", "Python", "Prompt Engineering"]
+      },
+      {
+        "name": "SA Task Manager",
+        "description": "Task organizer with categorization, due dates, and secure storage. Built with Flask and MySQL for reliable task management.",
+        "tech": ["Flask", "MySQL", "HTML/CSS", "JavaScript"],
+        "github": "https://github.com/lakshya8839/sa-task-manager"
+      },
+      {
+        "name": "SmartReview – AI Code Review Platform",
+        "description": "GPT-powered code review platform that analyzes GitHub repositories and provides intelligent feedback using OpenAI API.",
+        "tech": ["Flask", "OpenAI API", "GitHub REST API", "JavaScript"],
+        "github": "https://github.com/lakshya8839/SmartReview"
+      },
+      {
+        "name": "Secure Login System",
+        "description": "Modern desktop application with secure authentication, password recovery, and clean UI built with Python and CustomTkinter.",
+        "tech": ["Python", "CustomTkinter", "MySQL", "Security"],
+        "github": "https://github.com/lakshya8839/Secure_login_SystemTitle"
+      }
+    ]
+  },
+  "skills": {
+    "programming_languages": ["Python", "C", "C++", "JavaScript"],
+    "web_development": ["HTML5", "CSS3", "Flask", "React"],
+    "database": ["MySQL", "Database Design", "Query Optimization"],
+    "tools_and_devops": ["Git", "GitHub", "Docker", "Kubernetes", "Jenkins"],
+    "apis_and_integration": ["OpenAI API", "GitHub REST API", "RESTful Services"],
+    "currently_learning": ["Machine Learning", "GENAI", "GENAIops", "Python for Data Science"]
+  },
+  "certifications": [
+    {
+      "name": "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+      "provider": "Oracle",
+      "description": "Certified in fundamental concepts of AI and machine learning, focusing on practical applications within Oracle Cloud Infrastructure.",
+      "link": "https://catalog-education.oracle.com/pls/certview/sharebadge?id=A91057E1C723CB6A4185F9C9012B11098BCADED1A4AD36591F2CD99609E3FCC2"
+    },
+    {
+      "name": "Google Cloud Career Launchpad – Generative AI Leader Track",
+      "provider": "Google Cloud",
+      "description": "Understanding core concepts of Generative AI, Large Language Models, prompt design, responsible AI practices, and real business use cases."
+    },
+    {
+      "name": "AI for Beginners",
+      "provider": "HP LIFE",
+      "description": "Comprehensive introduction to Artificial Intelligence fundamentals and applications.",
+      "link": "https://www.life-global.org/certificate/21430cab-bd31-491b-847f-0d23f25bf320"
+    },
+    {
+      "name": "OneRoadmap Certificate",
+      "provider": "OneRoadmap",
+      "description": "AI skills certification from OneRoadmap, demonstrating proficiency in modern AI concepts and applications.",
+      "link": "https://oneroadmap.io/skills/ai/certificate/CERT-6F9B4124"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Data Science Intern",
+      "company": "DMV CoreTech",
+      "domain": "Data Science",
+      "duration": "11 Nov 2025 — 11 March 2026",
+      "location": "Silvassa, India",
+      "certificate_id": "DMVCT-INT-3M2512DSDA0011",
+      "description": "Successfully completed the Data Science internship program at DMV CoreTech, demonstrating dedication, professionalism, and a strong willingness to learn — gaining valuable exposure to real-world development practices."
+    },
+    {
+      "role": "Summer Research Intern (SURE 2026)",
+      "company": "IIT Hyderabad",
+      "domain": "Research",
+      "duration": "Summer 2026",
+      "description": "Selected among just 18 students across India (Computer Science branch) for the Summer Undergraduate Research Exposure programme at IIT Hyderabad. Application ID: SURE2026-0364 from Poornima College of Engineering.",
+      "highlights": [
+        "Selected among only 18 CS students nationwide",
+        "Resume shortlisted from applicants across all of India",
+        "Deep-dive discussion on projects, thinking process and learning",
+        "Competing alongside students from IITs, NITs and top institutions",
+        "Research-driven environment at IIT Hyderabad campus"
+      ]
+    },
+    {
+      "role": "Tech Intern",
+      "company": "LinuxWorld Informatics Pvt Ltd",
+      "domain": "DevOps, Full-Stack, Cloud",
+      "description": "Previous internship focused on cutting-edge technologies including Cloud Computing, DevOps, and Full-Stack Development."
+    }
+  ],
+  "linuxworld_tasks": {
+    "python_automation": [
+      "Web Scraping using Python – Automated data extraction from websites",
+      "Send an Email with Python",
+      "Send an SMS with Python",
+      "Make a Phone Call with Python – text-to-voice API",
+      "Post on Instagram with Python – automation",
+      "Menu-Driven Python Project – combines all automation tasks"
+    ],
+    "javascript_automation": [
+      "Take Photo Using JavaScript – webcam capture",
+      "Send Email Using JavaScript or API – EmailJS",
+      "Send WhatsApp Message Using JavaScript",
+      "Open the camera, click a photo and download it",
+      "Send mails using JS",
+      "Check nearest grocery stores",
+      "Run Google Maps inside the project",
+      "Fetch and show current location (lat-long)",
+      "Browser activity tracker"
+    ],
+    "docker": [
+      "Docker in Docker – custom images",
+      "Apache Server Setup – inside Docker",
+      "VLC in Docker – GUI support"
+    ],
+    "genai": [
+      "Gemini Expert Advisor – Gemini 2.5 Flash + Gradio",
+      "Medicine info Gemini (GenAI + Web Scraping)"
+    ],
+    "jenkins": ["Pulled code using GitHub auto-download – Ran Docker commands"],
+    "devops": ["DevOps project 1 – Jenkins, Docker, GitHub"],
+    "agentic_ai": ["Used GOAT Tool (langchain) – Solana"],
+    "cloud": ["Launching instances from python code"]
+  },
+  "linkedin_featured": [
+    {
+      "title": "Pinterest x Kubernetes Case Study",
+      "description": "How Pinterest scaled with Docker and Kubernetes. Real-world case study insights on microservices, infra, and DevOps transformation."
+    },
+    {
+      "title": "Apache Server in Docker",
+      "description": "Hands-on experience running and configuring Apache inside a Docker container, learning about systemctl, ports, and real-world DevOps deployment."
+    },
+    {
+      "title": "My First DevOps Project",
+      "description": "End-to-end CI/CD pipeline with Jenkins, Docker, and GitHub! Complete automation from code to deployment."
+    },
+    {
+      "title": "86 AWS Services: Team Learning Journey",
+      "description": "Collaborative, hands-on learning of 86 core AWS services at LinuxWorld Informatics. Real use cases, teamwork, and deep cloud exposure."
+    },
+    {
+      "title": "Amazon AWS: 200+ Services",
+      "description": "Presenting and understanding AWS vast cloud ecosystem, with a focus on DocumentDB and real-world scaling."
+    }
+  ],
+  "key_highlights": {
+    "iit_hyderabad_sure": {
+      "title": "IIT Hyderabad SURE Research Internship (Summer Undergraduate Research Exposure — 2026)",
+      "details": [
+        "Selected among just 18 students across India (Computer Science branch)",
+        "Institution: IIT Hyderabad – Top-tier research campus",
+        "Programme: SURE 2026 – Summer Undergraduate Research Exposure",
+        "Application ID: SURE2026-0364 (Poornima College of Engineering)"
+      ],
+      "journey": [
+        "Resume shortlisted from applicants across all of India",
+        "Deep-dive discussion on projects, thinking process and learning",
+        "Selected among only 18 CS students nationwide",
+        "Competing alongside students from IITs, NITs and top institutions",
+        "Research-driven environment at IIT Hyderabad campus"
+      ]
+    }
+  },
+  "navigation_sections": ["Home", "About", "Key Highlights", "Internship", "Projects", "Skills", "Certifications", "Contact"]
+}

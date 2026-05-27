@@ -145,8 +145,8 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ isOpen, onClose }) => {
                   {message.sender === 'bot' && (
                     <Bot className="w-4 h-4 text-teal-500 mt-1 flex-shrink-0" />
                   )}
-                  <div className="flex-1">
-                    <div className="text-sm leading-relaxed whitespace-pre-wrap">
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm leading-relaxed whitespace-pre-wrap break-words">
                       <ReactMarkdown
                         components={{
                           p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
@@ -193,24 +193,24 @@ const AIChatbot: React.FC<AIChatbotProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Input */}
-        <div className="p-6 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex space-x-3">
+        <div className="p-4 sm:p-6 border-t border-gray-200 dark:border-gray-700">
+          <div className="relative flex items-center">
             <input
               ref={inputRef}
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask me about Lakshya's skills, projects, or experience..."
-              className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 dark:bg-gray-800 dark:text-white"
+              placeholder="Ask about skills, projects, or experience..."
+              className="w-full pl-4 pr-14 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 dark:bg-gray-800 dark:text-white text-sm sm:text-base"
               disabled={isLoading}
             />
             <button
               onClick={sendMessage}
               disabled={!inputText.trim() || isLoading}
-              className="px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-xl hover:from-teal-600 hover:to-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+              className="absolute right-1.5 p-2 bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-lg hover:from-teal-600 hover:to-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4 sm:w-5 sm:h-5 ml-0.5" />
             </button>
           </div>
         </div>

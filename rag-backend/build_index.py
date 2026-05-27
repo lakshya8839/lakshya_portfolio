@@ -246,9 +246,7 @@ def main():
     except Exception:
         print("[INFO] No existing 'portfolio_data' collection to delete.")
 
-    sentence_transformers_ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-        model_name="all-MiniLM-L6-v2"
-    )
+    sentence_transformers_ef = embedding_functions.ONNXMiniLM_L6_V2(preferred_providers=["CPUExecutionProvider"])
 
     collection = client.create_collection(
         name="portfolio_data",

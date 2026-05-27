@@ -32,9 +32,7 @@ class RAGEngine:
 
         # Initialize ChromaDB
         self._client = chromadb.PersistentClient(path=chroma_path)
-        self._ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-            model_name="all-MiniLM-L6-v2"
-        )
+        self._ef = embedding_functions.ONNXMiniLM_L6_V2(preferred_providers=["CPUExecutionProvider"])
         self._collection = self._client.get_collection(
             name="portfolio_data",
             embedding_function=self._ef,

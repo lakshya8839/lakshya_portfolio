@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, Bot } from 'lucide-react';
-import profileImg from '../assets/profile.png';
+import profileImg from '../assets/profile2.png';
 import AIChatbot from './AIChatbot';
 
 const Hero: React.FC = () => {
